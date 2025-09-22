@@ -1,7 +1,10 @@
+import 'package:booking_doctor/features/fqas_and_privace_policy/views/fqa_view.dart';
+import 'package:booking_doctor/features/fqas_and_privace_policy/views/privace_plicy_view.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const DoctorApp());
+  runApp(DevicePreview(enabled: true, builder: (context) => const DoctorApp()));
 }
 
 class DoctorApp extends StatelessWidget {
@@ -9,9 +12,6 @@ class DoctorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
-      home: const Scaffold(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: FAQScreen());
   }
 }

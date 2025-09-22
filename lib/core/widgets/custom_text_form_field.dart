@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextFormFeild extends StatelessWidget {
-
   CustomTextFormFeild({
     super.key,
     this.hint,
@@ -59,11 +58,8 @@ class CustomTextFormFeild extends StatelessWidget {
   List<TextInputFormatter>? inputFormatters;
 
   @override
-
   Widget build(BuildContext context) {
-
     return TextFormField(
-
       inputFormatters: inputFormatters,
 
       keyboardType: keyboardType,
@@ -87,7 +83,6 @@ class CustomTextFormFeild extends StatelessWidget {
       cursorColor: Colors.grey,
 
       decoration: InputDecoration(
-
         hintText: hint,
 
         hintStyle: hintStyle ?? const TextStyle(color: Colors.grey),
@@ -105,29 +100,19 @@ class CustomTextFormFeild extends StatelessWidget {
         suffixIcon: suffixIcon,
 
         prefixIcon: prefixIcon,
-
       ),
 
       onTap: onTap,
-
     );
-
   }
 
   OutlineInputBorder buildBorder([color]) {
-
     return OutlineInputBorder(
-
       borderRadius: border == null
-
           ? BorderRadius.circular(10)
-
           : BorderRadius.circular(border!),
 
       borderSide: BorderSide(color: color ?? Colors.grey),
-
     );
-
   }
-
 }
