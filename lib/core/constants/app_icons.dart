@@ -49,6 +49,7 @@ class AppIcons {
   /// Assets for iconsProfileIcon
   /// assets/icons/profile_icon.svg
   static const String iconsProfileIcon = "assets/icons/profile_icon.svg";
+  static const String arrowDown = "assets/icons/arrow_down.svg";
 
   /// Assets for iconsRateIcon
   /// assets/icons/rate_icon.svg
