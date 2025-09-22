@@ -7,6 +7,8 @@ import 'package:flutter_svg/svg.dart';
 AppBar customAppBar(BuildContext context, {final String? title}) {
   return AppBar(
     backgroundColor: AppColors.whiteColor,
+    elevation: 0,
+    scrolledUnderElevation: 0,
     leading: IconButton(
       onPressed: () {
         Navigator.pop(context);

@@ -1,9 +1,9 @@
+import 'package:booking_doctor/features/notification/presentation/view/widgets/notification_body.dart';
+import 'package:flutter/material.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_strings.dart';
-import 'package:booking_doctor/core/widgets/empty_body_widget.dart';
 import 'package:booking_doctor/core/widgets/custom_app_bar.dart';
-import 'package:booking_doctor/features/favourite/presentation/views/widgets/favourite_filled_body.dart';
-import 'package:flutter/material.dart';
+import 'package:booking_doctor/core/widgets/empty_body_widget.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key});
@@ -19,7 +19,7 @@ class NotificationView extends StatelessWidget {
               mainTitle: AppStrings.nothingToDisplayHere,
               subTitle: AppStrings.wellNotify,
             )
-          : SizedBox(),
+          : NotificationBody(),
     );
   }
 }
