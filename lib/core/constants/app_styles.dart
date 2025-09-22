@@ -1,5 +1,6 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_fonts.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AppStyles {
@@ -12,6 +13,18 @@ class AppStyles {
       color: AppColors.secondaryColor,
       fontSize: getResponsiveFontSize(context, fontSize: size),
       fontFamily: AppFonts.georgia,
+    );
+  }
+
+  static TextStyle fontMontserratRegularGreyColor(
+    BuildContext context, {
+    required double size,
+  }) {
+    return TextStyle(
+      fontWeight: FontWeight.bold,
+      color: AppColors.greySemiDarkColor,
+      fontSize: getResponsiveFontSize(context, fontSize: size),
+      fontFamily: AppFonts.montserrat,
     );
   }
 }

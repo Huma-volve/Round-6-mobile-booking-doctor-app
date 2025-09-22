@@ -1,0 +1,61 @@
+import 'package:booking_doctor/core/constants/app_colors.dart';
+import 'package:booking_doctor/core/constants/app_icons.dart';
+import 'package:booking_doctor/core/constants/app_images.dart';
+import 'package:booking_doctor/core/constants/app_strings.dart';
+import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/core/helpers/size_config.dart';
+import 'package:booking_doctor/features/home/presentation/views/widgets/custom_appbar_right_bottons.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    return SafeArea(
+      child: SizedBox(
+        height: kToolbarHeight,
+        child: Row(
+          children: [
+            CircleAvatar(backgroundImage: AssetImage(AppImages.homeImage)),
+            SizedBox(width: SizeConfig.blockSizeHorizontal * 2),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  AppStrings.welcomeBack + AppStrings.wessam,
+                  style: AppStyles.fontGeorgiaRegularSecondaryColor(
+                    context,
+                    size: 14,
+                  ).copyWith(color: AppColors.secondaryColor),
+                ),
+                SizedBox(height: SizeConfig.safeBlockHorizontal * 2),
+                Row(
+                  children: [
+                    SvgPicture.asset(AppIcons.iconsLocationIconHome),
+                    SizedBox(width: SizeConfig.blockSizeHorizontal * 1),
+                    Text(
+                      AppStrings.elNasrStreetCairo,
+                      style: AppStyles.fontMontserratRegularGreyColor(
+                        context,
+                        size: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Spacer(),
+            CustomAppbarRightBottons(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(120);
+}

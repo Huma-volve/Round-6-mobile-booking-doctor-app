@@ -40,6 +40,7 @@ class AppIcons {
   /// assets/icons/location_icon_home.svg
   static const String iconsLocationIconHome =
       "assets/icons/location_icon_home.svg";
+  static const String iconsSearchIcon = "assets/icons/search_icon.svg";
 
   /// Assets for iconsProfileIcon
   /// assets/icons/profile_icon.svg
