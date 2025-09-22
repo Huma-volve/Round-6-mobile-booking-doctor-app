@@ -2,26 +2,6 @@ import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:flutter/material.dart';
 
-// class FAQsView extends StatelessWidget {
-//   const FAQsView({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         leading: IconButton(
-//           onPressed: () {
-//             Navigator.pop(context);
-//           },
-//           icon: Icon(Icons.arrow_back_ios_new),
-//         ),
-//         title: Text('FAQs', style: AppStyles.font24Regular(context)),
-//       ),
-//       body: Column(),
-//     );
-//   }
-// }
-
 class FAQScreen extends StatefulWidget {
   @override
   State<FAQScreen> createState() => _FAQScreenState();

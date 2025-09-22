@@ -1,5 +1,6 @@
 import 'package:booking_doctor/features/fqas_and_privace_policy/views/fqa_view.dart';
 import 'package:booking_doctor/features/fqas_and_privace_policy/views/privace_plicy_view.dart';
+import 'package:booking_doctor/features/review/presentation/views/add_review_view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,9 @@ class DoctorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: FAQScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AddReviewView(),
+    );
   }
 }

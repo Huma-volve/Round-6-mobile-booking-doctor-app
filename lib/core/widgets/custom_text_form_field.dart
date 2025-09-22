@@ -21,6 +21,7 @@ class CustomTextFormFeild extends StatelessWidget {
     this.readOnly,
     this.onTap,
     this.inputFormatters,
+    this.minLines,
   });
 
   final double? border;
@@ -56,6 +57,7 @@ class CustomTextFormFeild extends StatelessWidget {
   final Function()? onTap;
 
   List<TextInputFormatter>? inputFormatters;
+  final int? minLines;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class CustomTextFormFeild extends StatelessWidget {
 
       maxLines: maxLines,
 
-      minLines: 1,
+      minLines: minLines,
 
       obscureText: obscurText,
 
