@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextFormFeild extends StatelessWidget {
-
   CustomTextFormFeild({
     super.key,
     this.hint,
@@ -22,11 +21,15 @@ class CustomTextFormFeild extends StatelessWidget {
     this.readOnly,
     this.onTap,
     this.inputFormatters,
+    this.filled,
+    this.fillColor,
   });
 
   final double? border;
 
   final String? hint;
+  bool? filled;
+  Color? fillColor;
 
   final int? maxLines;
 
@@ -59,11 +62,8 @@ class CustomTextFormFeild extends StatelessWidget {
   List<TextInputFormatter>? inputFormatters;
 
   @override
-
   Widget build(BuildContext context) {
-
     return TextFormField(
-
       inputFormatters: inputFormatters,
 
       keyboardType: keyboardType,
@@ -71,7 +71,6 @@ class CustomTextFormFeild extends StatelessWidget {
       maxLines: maxLines,
 
       minLines: 1,
-
       obscureText: obscurText,
 
       validator: validator,
@@ -87,7 +86,6 @@ class CustomTextFormFeild extends StatelessWidget {
       cursorColor: Colors.grey,
 
       decoration: InputDecoration(
-
         hintText: hint,
 
         hintStyle: hintStyle ?? const TextStyle(color: Colors.grey),
@@ -105,29 +103,21 @@ class CustomTextFormFeild extends StatelessWidget {
         suffixIcon: suffixIcon,
 
         prefixIcon: prefixIcon,
-
+        filled: filled,
+        fillColor: fillColor,
       ),
 
       onTap: onTap,
-
     );
-
   }
 
   OutlineInputBorder buildBorder([color]) {
-
     return OutlineInputBorder(
-
       borderRadius: border == null
-
           ? BorderRadius.circular(10)
-
           : BorderRadius.circular(border!),
 
-      borderSide: BorderSide(color: color ?? Colors.grey),
-
+      borderSide: BorderSide(color: color ?? Colors.white),
     );
-
   }
-
 }
