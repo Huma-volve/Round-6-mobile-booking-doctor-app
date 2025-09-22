@@ -14,4 +14,13 @@ abstract class AppStrings {
   static const String home = "Home";
   static const String booking = "Booking";
   static const String profile = "Profile";
+  static const String yourFavorite1 = "Your favorite!";
+  static const String yourFavorite = "Your favorite";
+  static const String addYourFavoriteToFindItEasily =
+      "Add your favorite to find it easily";
+
+  static const String nothingToDisplayHere = "Nothing to display here!";
+  static const String wellNotify =
+      "We’ll notify you once we have new notifications.";
+  static const String notifications = "Notifications";
 }

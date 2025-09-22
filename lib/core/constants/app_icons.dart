@@ -35,6 +35,10 @@ class AppIcons {
   /// Assets for iconsHomeIcon
   /// assets/icons/home_Stroke_icon.svg
   static const String iconsHomeIcon = "assets/icons/home_Stroke_grey.svg";
+  static const String backArrow = "assets/icons/back_arrow.svg";
+  static const String cancelledIcon = "assets/icons/cancelled_icon.svg";
+  static const String completeIcon = "assets/icons/complete_icon.svg";
+  static const String upcomingIcon = "assets/icons/upcoming_icon.svg";
 
   /// Assets for iconsLocationIconHome
   /// assets/icons/location_icon_home.svg
