@@ -1,3 +1,4 @@
+import 'package:booking_doctor/features/doctor_details/presentation/views/doctor_details_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +11,8 @@ class DoctorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: const Scaffold(),
+      debugShowCheckedModeBanner: false,
+      home: DoctorDetailsScreen(),
     );
   }
 }
