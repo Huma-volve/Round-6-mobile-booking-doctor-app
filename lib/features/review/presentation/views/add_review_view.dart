@@ -19,7 +19,6 @@ class _AddReviewViewState extends State<AddReviewView> {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.height);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
@@ -119,7 +118,9 @@ class _AddReviewViewState extends State<AddReviewView> {
                     : MediaQuery.of(context).size.height * 0.2,
               ),
 
-              CutomButton(
+              CustomButton(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                width: double.infinity,
                 onTap: () {
                   _showReviewPopup(context);
                 },
@@ -149,7 +150,7 @@ class _AddReviewViewState extends State<AddReviewView> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(AppImages.starImage),
-                // const SizedBox(height: 20),
+
                 Text(
                   "Thanks for your review",
                   style: AppStyles.font24Regular(

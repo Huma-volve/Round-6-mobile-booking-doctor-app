@@ -1,6 +1,4 @@
-import 'package:booking_doctor/features/fqas_and_privace_policy/views/fqa_view.dart';
-import 'package:booking_doctor/features/fqas_and_privace_policy/views/privace_plicy_view.dart';
-import 'package:booking_doctor/features/review/presentation/views/add_review_view.dart';
+import 'package:booking_doctor/features/my_booking/presentation/views/my_booking.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +13,7 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AddReviewView(),
+      home: MyBookingView(),
     );
   }
 }

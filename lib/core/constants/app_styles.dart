@@ -10,6 +10,15 @@ class AppStyles {
     );
   }
 
+  static TextStyle font20SemiBold(BuildContext context) {
+    double size = AppStyles().getResponsiveFontSize(context, fontSize: 20);
+    return TextStyle(
+      fontSize: size,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Georgia',
+    );
+  }
+
   static TextStyle font16Meduim(BuildContext context) {
     double size = AppStyles().getResponsiveFontSize(context, fontSize: 16);
     return TextStyle(
