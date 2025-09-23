@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(DevicePreview(enabled: true, builder: (context) => const DoctorApp()));
+
+  // runApp(DevicePreview(builder: (context) => DoctorApp()));
 }
 
 class DoctorApp extends StatelessWidget {
@@ -14,8 +16,14 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       initialRoute: AppRoutes.splachViewRouteName,
       onGenerateRoute: AppRouters.onGenerateRoute,
+
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+
+      // onGenerateRoute: AppRouters.onGenerateRoute,
+      // initialRoute: AppRoutes.customBottomNav,
     );
   }
 }
