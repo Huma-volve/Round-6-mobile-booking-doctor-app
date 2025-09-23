@@ -1,4 +1,4 @@
-import 'package:booking_doctor/features/my_booking/presentation/views/my_booking.dart';
+import 'package:booking_doctor/features/onboarding/presentation/views/onboarding.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyBookingView(),
+      home: OnBoardingScreen(),
     );
   }
 }
