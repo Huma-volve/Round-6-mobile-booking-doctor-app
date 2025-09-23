@@ -6,6 +6,7 @@ import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_or.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_form_feild.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_span.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -43,7 +44,7 @@ class SignInYourEmail extends StatelessWidget {
 
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.password,
+                iconpath: CupertinoIcons.mail,
                 hintText: "Email",
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
@@ -58,7 +59,7 @@ class SignInYourEmail extends StatelessWidget {
 
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.password,
+                iconpath: CupertinoIcons.lock,
                 hintText: "Password",
                 keyboardType: TextInputType.visiblePassword,
                 validator: (value) {
@@ -86,6 +87,7 @@ class SignInYourEmail extends StatelessWidget {
               ),
             ),
             SliverToBoxAdapter(child: SizedBox(height: 35)),
+            //home
             SliverToBoxAdapter(child: CustomMaterialButton(text: "Sign in ")),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
 
@@ -109,6 +111,9 @@ class SignInYourEmail extends StatelessWidget {
                 child: CustomTextSpan(
                   text1: "Don’t have an account? ",
                   text2: "Sign up",
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.signUp);
+                  },
                 ),
               ),
             ),

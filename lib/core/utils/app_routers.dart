@@ -1,4 +1,5 @@
 import 'package:booking_doctor/core/constants/app_routes.dart';
+import 'package:booking_doctor/features/auth/presentations/views/screens/code_verification.dart';
 import 'package:booking_doctor/features/auth/presentations/views/screens/forget_password.dart';
 import 'package:booking_doctor/features/auth/presentations/views/screens/otp_code.dart';
 import 'package:booking_doctor/features/auth/presentations/views/screens/set_password.dart';
@@ -28,6 +29,8 @@ class AppRouters {
         return MaterialPageRoute(builder: (context) => ForgetPassword());
       case AppRoutes.setPassword:
         return MaterialPageRoute(builder: (context) => SetPassword());
+      case AppRoutes.codeVerification:
+        return MaterialPageRoute(builder: (context) => VerificationPage());
 
       default:
         return MaterialPageRoute(

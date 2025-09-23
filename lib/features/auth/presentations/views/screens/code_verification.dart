@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
-class OTPVerificationPage extends StatefulWidget {
-  const OTPVerificationPage({super.key});
+class VerificationPage extends StatefulWidget {
+  const VerificationPage({super.key});
 
   @override
-  State<OTPVerificationPage> createState() => _OTPVerificationPageState();
+  State<VerificationPage> createState() => _OTPVerificationPageState();
 }
 
-class _OTPVerificationPageState extends State<OTPVerificationPage> {
+class _OTPVerificationPageState extends State<VerificationPage> {
   final List<TextEditingController> _controllers = List.generate(
     4,
     (_) => TextEditingController(),
@@ -44,7 +44,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
           onPressed: () => Navigator.pop(context),
           icon: SvgPicture.asset(AppIcons.arrowLeft, height: 24, width: 24),
         ),
-        title: const Text("OTP Code Verification"),
+        title: const Text(" Code Verification"),
         centerTitle: true,
       ),
       body: Padding(
@@ -53,7 +53,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
           children: [
             const SizedBox(height: 20),
             const Text(
-              "Code has been send to +02 010 *** **88",
+              "Code has been send to your email Check your Email",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: AppColors.grey),
             ),
@@ -95,11 +95,10 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
             const SizedBox(height: 40),
             SizedBox(
               width: double.infinity,
-              //home
               child: CustomMaterialButton(
                 text: "Verify",
                 onPressed: () {
-                  // Navigator.pushNamed(context, AppRoutes.setPassword);
+                  Navigator.pushNamed(context, AppRoutes.setPassword);
                 },
               ),
             ),

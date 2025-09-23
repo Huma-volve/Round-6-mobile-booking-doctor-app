@@ -1,4 +1,5 @@
 import 'package:booking_doctor/core/constants/app_icons.dart';
+import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_container_icon.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_material_buttom.dart';
@@ -6,6 +7,7 @@ import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_row_check_box.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_form_feild.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_span.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -43,7 +45,7 @@ class SignUpView extends StatelessWidget {
 
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.password,
+                iconpath: CupertinoIcons.person,
                 hintText: "Full Name",
                 keyboardType: TextInputType.name,
                 validator: (value) {
@@ -54,11 +56,23 @@ class SignUpView extends StatelessWidget {
                 },
               ),
             ),
-            SliverToBoxAdapter(child: SizedBox(height: 25)),
+            SliverToBoxAdapter(
+              child: CustomTextFormFeild(
+                iconpath: CupertinoIcons.phone,
+                hintText: "Phone",
+                keyboardType: TextInputType.name,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Email is required";
+                  }
+                  return null;
+                },
+              ),
+            ),
 
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.email,
+                iconpath: CupertinoIcons.mail,
                 hintText: "Email",
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
@@ -69,11 +83,10 @@ class SignUpView extends StatelessWidget {
                 },
               ),
             ),
-            SliverToBoxAdapter(child: SizedBox(height: 25)),
 
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.password,
+                iconpath: CupertinoIcons.lock,
                 hintText: "Password",
                 keyboardType: TextInputType.visiblePassword,
                 validator: (value) {
@@ -88,7 +101,14 @@ class SignUpView extends StatelessWidget {
 
             SliverToBoxAdapter(child: Center(child: CustomRowCheckBox())),
             SliverToBoxAdapter(child: SizedBox(height: 35)),
-            SliverToBoxAdapter(child: CustomMaterialButton(text: "Sign up ")),
+            SliverToBoxAdapter(
+              child: CustomMaterialButton(
+                text: "Sign up ",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.signInYourEmail);
+                },
+              ),
+            ),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
 
             SliverToBoxAdapter(child: CustomOr()),
@@ -113,6 +133,9 @@ class SignUpView extends StatelessWidget {
                 child: CustomTextSpan(
                   text1: "Already have an account! ",
                   text2: "Sign in",
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.signInYourEmail);
+                  },
                 ),
               ),
             ),

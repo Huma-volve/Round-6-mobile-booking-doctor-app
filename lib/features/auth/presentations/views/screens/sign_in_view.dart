@@ -2,7 +2,6 @@ import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
-import 'package:booking_doctor/core/utils/app_routers.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_container.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_material_buttom.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_or.dart';
@@ -16,7 +15,9 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: SvgPicture.asset(AppIcons.arrowLeft, height: 24, width: 24),
@@ -29,6 +30,7 @@ class SignInView extends StatelessWidget {
             SliverToBoxAdapter(
               child: Image.asset(AppImages.welcome, width: 200, height: 200),
             ),
+            SliverToBoxAdapter(child: SizedBox(height: 25)),
             SliverToBoxAdapter(
               child: Text(
                 textAlign: TextAlign.center,
@@ -36,6 +38,8 @@ class SignInView extends StatelessWidget {
                 style: AppStyles.textGeorgia(context: context),
               ),
             ),
+            SliverToBoxAdapter(child: SizedBox(height: 25)),
+
             SliverToBoxAdapter(
               child: CustomContainer(
                 iconPath: AppIcons.facebook,
@@ -57,7 +61,11 @@ class SignInView extends StatelessWidget {
                 onTap: () {},
               ),
             ),
+            SliverToBoxAdapter(child: SizedBox(height: 15)),
+
             SliverToBoxAdapter(child: CustomOr()),
+            SliverToBoxAdapter(child: SizedBox(height: 15)),
+
             SliverToBoxAdapter(
               child: CustomMaterialButton(
                 text: "Sign in with your Phone Number",
@@ -66,6 +74,8 @@ class SignInView extends StatelessWidget {
                 },
               ),
             ),
+            SliverToBoxAdapter(child: SizedBox(height: 25)),
+
             SliverToBoxAdapter(
               child: Center(
                 child: CustomTextSpan(

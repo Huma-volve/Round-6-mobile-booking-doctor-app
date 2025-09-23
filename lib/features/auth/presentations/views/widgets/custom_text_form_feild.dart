@@ -1,7 +1,6 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
-import 'package:booking_doctor/core/constants/app_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTextFormFeild extends StatelessWidget {
   const CustomTextFormFeild({
@@ -19,7 +18,7 @@ class CustomTextFormFeild extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
-  final String iconpath;
+  final IconData iconpath;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,9 +32,10 @@ class CustomTextFormFeild extends StatelessWidget {
           filled: true,
           fillColor: AppColors.backgrey,
           hintText: hintText,
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(12),
-            child: SvgPicture.asset(iconpath, width: 18, height: 18),
+          prefixIcon: Icon(
+            iconpath,
+            size: 20,
+            //color: Colors.red,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),

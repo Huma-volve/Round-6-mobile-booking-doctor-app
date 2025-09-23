@@ -1,6 +1,7 @@
 import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_material_buttom.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_form_feild.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,7 +38,7 @@ class SetPassword extends StatelessWidget {
 
               SliverToBoxAdapter(
                 child: CustomTextFormFeild(
-                  iconpath: AppIcons.password,
+                  iconpath: CupertinoIcons.lock,
                   hintText: "password",
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
@@ -51,7 +52,7 @@ class SetPassword extends StatelessWidget {
               SliverToBoxAdapter(child: Text("Confirm password")),
               SliverToBoxAdapter(
                 child: CustomTextFormFeild(
-                  iconpath: AppIcons.password,
+                  iconpath: CupertinoIcons.lock,
                   hintText: "password",
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {

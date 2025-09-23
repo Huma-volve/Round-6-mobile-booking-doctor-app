@@ -2,6 +2,7 @@ import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_material_buttom.dart';
 import 'package:booking_doctor/features/auth/presentations/views/widgets/custom_text_form_feild.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -33,7 +34,7 @@ class ForgetPassword extends StatelessWidget {
             SliverToBoxAdapter(child: SizedBox(height: 25)),
             SliverToBoxAdapter(
               child: CustomTextFormFeild(
-                iconpath: AppIcons.password,
+                iconpath: CupertinoIcons.mail,
                 hintText: "Email",
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
@@ -54,7 +55,7 @@ class ForgetPassword extends StatelessWidget {
                   child: CustomMaterialButton(
                     text: "Reset Password",
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.OTP);
+                      Navigator.pushNamed(context, AppRoutes.codeVerification);
                     },
                   ),
                 ),

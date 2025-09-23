@@ -93,7 +93,9 @@ class PhoneInputField extends StatelessWidget {
                 child: CustomTextSpan(
                   text1: "Don’t have an account? ",
                   text2: "Sign up",
-                  onTap: () => Navigator.pop(context),
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.signUp);
+                  },
                 ),
               ),
             ),
