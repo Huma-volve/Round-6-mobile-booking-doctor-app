@@ -1,8 +1,11 @@
-import 'package:booking_doctor/features/booking_appointment/domain/payment/stripe_keys.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 abstract class PaymentManager {
+
+   static final secretKey = dotenv.env['STRIPE_SECRET_KEY'];
+
   static Future<void> makePayment(int amount, String currency) async {
     try {
       String clientSecret = await _getClientSecret(
@@ -31,7 +34,7 @@ abstract class PaymentManager {
       'https://api.stripe.com/v1/payment_intents',
       options: Options(
         headers: {
-          'Authorization': 'Bearer ${StripeKeys.secretKey}',
+          'Authorization': 'Bearer $secretKey',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       ),
