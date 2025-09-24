@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextFormFeild extends StatelessWidget {
-
   CustomTextFormFeild({
     super.key,
     this.hint,
@@ -22,11 +21,19 @@ class CustomTextFormFeild extends StatelessWidget {
     this.readOnly,
     this.onTap,
     this.inputFormatters,
+<<<<<<< HEAD
+    this.minLines,
+=======
+    this.filled,
+    this.fillColor,
+>>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
   });
 
   final double? border;
 
   final String? hint;
+  bool? filled;
+  Color? fillColor;
 
   final int? maxLines;
 
@@ -57,21 +64,23 @@ class CustomTextFormFeild extends StatelessWidget {
   final Function()? onTap;
 
   List<TextInputFormatter>? inputFormatters;
+  final int? minLines;
 
   @override
-
   Widget build(BuildContext context) {
-
     return TextFormField(
-
       inputFormatters: inputFormatters,
 
       keyboardType: keyboardType,
 
       maxLines: maxLines,
 
-      minLines: 1,
+<<<<<<< HEAD
+      minLines: minLines,
 
+=======
+      minLines: 1,
+>>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
       obscureText: obscurText,
 
       validator: validator,
@@ -87,7 +96,6 @@ class CustomTextFormFeild extends StatelessWidget {
       cursorColor: Colors.grey,
 
       decoration: InputDecoration(
-
         hintText: hint,
 
         hintStyle: hintStyle ?? const TextStyle(color: Colors.grey),
@@ -105,29 +113,28 @@ class CustomTextFormFeild extends StatelessWidget {
         suffixIcon: suffixIcon,
 
         prefixIcon: prefixIcon,
-
+<<<<<<< HEAD
+=======
+        filled: filled,
+        fillColor: fillColor,
+>>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
       ),
 
       onTap: onTap,
-
     );
-
   }
 
   OutlineInputBorder buildBorder([color]) {
-
     return OutlineInputBorder(
-
       borderRadius: border == null
-
           ? BorderRadius.circular(10)
-
           : BorderRadius.circular(border!),
 
+<<<<<<< HEAD
       borderSide: BorderSide(color: color ?? Colors.grey),
-
+=======
+      borderSide: BorderSide(color: color ?? Colors.white),
+>>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
     );
-
   }
-
 }
