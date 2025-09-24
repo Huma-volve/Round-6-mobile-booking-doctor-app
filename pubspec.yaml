@@ -87,7 +87,6 @@ flutter:
 
     - family: Georgia 
       fonts:
-        - asset: assets/fonts/georgia.ttf
         - asset: assets/fonts/Georgia.ttf
 
           # style: Regular

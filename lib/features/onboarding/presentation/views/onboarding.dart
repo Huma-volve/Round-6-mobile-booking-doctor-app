@@ -1,5 +1,6 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
+import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/features/onboarding/presentation/widgets/custom_animated.dart';
 import 'package:booking_doctor/features/onboarding/presentation/widgets/onboarding_model.dart';
@@ -109,7 +110,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             duration: Duration(milliseconds: 500),
                             curve: Curves.easeIn,
                           );
-                        } else {}
+                        } else {
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.customBottomNav,
+                          );
+                        }
                       },
                       text: index < onboardingList.length - 1
                           ? 'Next'
