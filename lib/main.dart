@@ -1,3 +1,4 @@
+import 'package:booking_doctor/features/profile/presentation/views/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +11,8 @@ class DoctorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: const Scaffold(),
+      debugShowCheckedModeBanner: false,
+      home: ProfileScreen(),
     );
   }
 }

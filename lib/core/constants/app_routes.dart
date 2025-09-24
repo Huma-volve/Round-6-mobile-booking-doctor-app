@@ -1,1 +1,2 @@
-class AppRoutes{}
+class AppRoutes{
+}
