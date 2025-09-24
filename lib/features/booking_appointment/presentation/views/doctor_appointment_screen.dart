@@ -1,19 +1,22 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/booking_appointment/presentation/views/doctor_payment_screen.dart';
 import 'package:booking_doctor/features/doctor_details/presentation/views/doctor_details_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DoctorAppointmentScreen extends StatefulWidget {
   @override
-  _DoctorAppointmentScreenState createState() => _DoctorAppointmentScreenState();
+  _DoctorAppointmentScreenState createState() =>
+      _DoctorAppointmentScreenState();
 }
 
 class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
   DateTime currentMonth = DateTime(2025, 7); // July 2025
   int? selectedDay;
   String selectedDateText = "Monday, July 21";
- TimeOfDay selectedTime=TimeOfDay.now();
+  TimeOfDay selectedTime = TimeOfDay.now();
 
   List<int> availableDays = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
@@ -95,30 +98,28 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
   Widget build(BuildContext context) {
     final daysInMonth = getDaysInMonth(currentMonth);
     final firstDayWeekday = getFirstDayOfMonth(currentMonth);
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(CupertinoIcons.back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
-          'Book Appointment',
-          style: AppStyles.appBarTitleStyle
-        ),
+        title: Text('Book Appointment', style: AppStyles.appBarTitleStyle),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: doctorDefinition(context),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
             // Select a day section
             Container(
               color: Colors.white,
@@ -126,10 +127,7 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Select a day',
-                    style: AppStyles.nameStyle
-                  ),
+                  Text('Select a day', style: AppStyles.nameStyle),
                   SizedBox(height: 12),
                   // Selected date dropdown-like container
                   Container(
@@ -160,7 +158,10 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
                             ),
                           ),
                         ),
-                        Icon(Icons.keyboard_arrow_down, color: Colors.grey[400]),
+                        Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Colors.grey[400],
+                        ),
                       ],
                     ),
                   ),
@@ -169,286 +170,283 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
             ),
             // Calendar Section
             Container(
-                color: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          onPressed: previousMonth,
-                          icon: Icon(
-                            Icons.chevron_left,
-                            color: Colors.black,
-                            size: 24,
-                          ),
-                        ),
-                        Text(
-                          '${monthNames[currentMonth.month - 1]} ${currentMonth.year}',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: nextMonth,
-                          icon: Icon(
-                            Icons.chevron_right,
-                            color: Colors.black,
-                            size: 24,
-                          ),
-                        ),
-                      ],
-                    ),
-        
-                  //  SizedBox(height: 16),
-        
-                    // Days of week
-                    Row(
-                      children: dayNames
-                          .map(
-                            (day) => Expanded(
-                              child: Center(
-                                child: Text(
-                                  day,
-                                  style: AppStyles.addReviewStyle.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                    SizedBox(height: 12),
-                    // Calendar grid
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height*.35,
-                      child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 7,
-                          childAspectRatio: 1,
-                          crossAxisSpacing: 4,
-                          mainAxisSpacing: 4,
-                        ),
-                        itemCount: 42,
-                        itemBuilder: (context, index) {
-                          final dayNumber = index - firstDayWeekday + 1;
-                          // Previous month days
-                          if (dayNumber < 1) {
-                            final prevMonth = DateTime(
-                              currentMonth.year,
-                              currentMonth.month - 1,
-                            );
-                            final prevMonthDays = getDaysInMonth(prevMonth);
-                            final prevDay = prevMonthDays + dayNumber;
-        
-                            return Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: AppColors.grey,
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: AppColors.grey),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  prevDay.toString(),
-                                  style: AppStyles.bioStyle.copyWith(
-                                    color: Colors.grey[400],
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-        
-                          // Next month days
-                          if (dayNumber > daysInMonth) {
-                            final nextDay = dayNumber - daysInMonth;
-                            return Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: AppColors.grey,
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: AppColors.grey),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  nextDay.toString(),
-                                  style: AppStyles.bioStyle.copyWith(
-                                    color: Colors.grey[400],
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-        
-                          // Current month days
-                          final isAvailable = isDayAvailable(dayNumber);
-                          final isSelected = selectedDay == dayNumber;
-        
-                          return GestureDetector(
-                            onTap: () => selectDay(dayNumber),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: isSelected
-                                    ? Color(0xFF4285F4)
-                                    : (isAvailable
-                                          ? Color(0xFFE8F0FE)
-                                          : AppColors.grey),
-                                borderRadius: BorderRadius.circular(8),
-                                border: isAvailable && !isSelected
-                                    ? Border.all(color: Color(0xFFDAE3F0))
-                                    : null,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  dayNumber.toString(),
-                                  style: AppStyles.bioStyle.copyWith(
-                                    color: isSelected
-                                        ? Colors.white
-                                        : (isAvailable
-                                              ? Color(0xFF4285F4)
-                                              : Colors.grey[400]),
-                                    fontSize: 12,
-                                    fontWeight: isSelected || isAvailable
-                                        ? FontWeight.w500
-                                        : FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    Text(
-                        'Select a time',
-                        style: AppStyles.nameStyle
-                    ),
-                    SizedBox(height: 12),
-                    Container(
-                      width: double.infinity,
-                      height: 50,
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey[300]!),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.access_time_outlined,
-                            color: Colors.grey[400],
-                            size: 20,
-                          ),
-                          SizedBox(width: 12),
-                          Text(
-                            "${selectedTime.hour}:${selectedTime.minute}",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: AppColors.black
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                IconButton(onPressed:()async{
-                                  final TimeOfDay? timeOfDay= await showTimePicker(context: context, initialTime: selectedTime,initialEntryMode: TimePickerEntryMode.dial);
-                                  if(timeOfDay!=null){
-                                    setState(() {
-                                      selectedTime=timeOfDay;
-                                    });
-                                  }
-                                } ,icon:Icon(Icons.keyboard_arrow_down, color: AppColors.black)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                  ],
-                ),
-              ),
-            
-        
-            // Bottom section
-            Container(
               color: Colors.white,
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      IconButton(
+                        onPressed: previousMonth,
+                        icon: Icon(
+                          Icons.chevron_left,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
                       Text(
-                        'Price',
+                        '${monthNames[currentMonth.month - 1]} ${currentMonth.year}',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
                       ),
-                      Text(
-                        '/hour',
-                        style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-                      ),
-                      Spacer(),
-                      Text(
-                        '350\$',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFFFF5722),
+                      IconButton(
+                        onPressed: nextMonth,
+                        icon: Icon(
+                          Icons.chevron_right,
+                          color: Colors.black,
+                          size: 24,
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
-                  // Continue button
+                  // Days of week
+                  Row(
+                    children: dayNames
+                        .map(
+                          (day) => Expanded(
+                            child: Center(
+                              child: Text(
+                                day,
+                                style: AppStyles.addReviewStyle.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                  SizedBox(height: 12),
+                  // Calendar grid
                   SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: selectedDay != null
-                          ? () {
-                        Navigator.pushNamed(context, AppRoutes.doctorPaymentScreen,arguments:{
-                          "time":"${selectedTime.hour}:${selectedTime.minute}",
-                          "date":selectedDateText
-                        });
-                            }
-                          : null,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF4285F4),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        elevation: 0,
+                    height: MediaQuery.of(context).size.height * .35,
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 7,
+                        childAspectRatio: 1,
+                        crossAxisSpacing: 4,
+                        mainAxisSpacing: 4,
                       ),
-                      child: Text(
-                        'Continue to Pay',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      itemCount: 42,
+                      itemBuilder: (context, index) {
+                        final dayNumber = index - firstDayWeekday + 1;
+                        // Previous month days
+                        if (dayNumber < 1) {
+                          final prevMonth = DateTime(
+                            currentMonth.year,
+                            currentMonth.month - 1,
+                          );
+                          final prevMonthDays = getDaysInMonth(prevMonth);
+                          final prevDay = prevMonthDays + dayNumber;
+
+                          return Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: AppColors.grey,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.grey),
+                            ),
+                            child: Center(
+                              child: Text(
+                                prevDay.toString(),
+                                style: AppStyles.bioStyle.copyWith(
+                                  color: Colors.grey[400],
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+
+                        // Next month days
+                        if (dayNumber > daysInMonth) {
+                          final nextDay = dayNumber - daysInMonth;
+                          return Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: AppColors.grey,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.grey),
+                            ),
+                            child: Center(
+                              child: Text(
+                                nextDay.toString(),
+                                style: AppStyles.bioStyle.copyWith(
+                                  color: Colors.grey[400],
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+
+                        // Current month days
+                        final isAvailable = isDayAvailable(dayNumber);
+                        final isSelected = selectedDay == dayNumber;
+
+                        return GestureDetector(
+                          onTap: () => selectDay(dayNumber),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: isSelected
+                                  ? Color(0xFF4285F4)
+                                  : (isAvailable
+                                        ? Color(0xFFE8F0FE)
+                                        : AppColors.grey),
+                              borderRadius: BorderRadius.circular(8),
+                              border: isAvailable && !isSelected
+                                  ? Border.all(color: Color(0xFFDAE3F0))
+                                  : null,
+                            ),
+                            child: Center(
+                              child: Text(
+                                dayNumber.toString(),
+                                style: AppStyles.bioStyle.copyWith(
+                                  color: isSelected
+                                      ? Colors.white
+                                      : (isAvailable
+                                            ? Color(0xFF4285F4)
+                                            : Colors.grey[400]),
+                                  fontSize: 12,
+                                  fontWeight: isSelected || isAvailable
+                                      ? FontWeight.w500
+                                      : FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
+                  Text('Select a time', style: AppStyles.nameStyle),
+                  SizedBox(height: 12),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[300]!),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.access_time_outlined,
+                          color: Colors.grey[400],
+                          size: 20,
+                        ),
+                        SizedBox(width: 12),
+                        Text(
+                          "${selectedTime.hour}:${selectedTime.minute}",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.black,
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () async {
+                                  final TimeOfDay? timeOfDay =
+                                      await showTimePicker(
+                                        context: context,
+                                        initialTime: selectedTime,
+                                        initialEntryMode:
+                                            TimePickerEntryMode.dial,
+                                      );
+                                  if (timeOfDay != null) {
+                                    setState(() {
+                                      selectedTime = timeOfDay;
+                                    });
+                                  }
+                                },
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down,
+                                  color: AppColors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
                 ],
               ),
             ),
-          //  SizedBox(height: 10,),
-        
-        
+          ],
+        ),
+      ),
+      bottomNavigationBar:  Container(
+        height: height*.13,
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  spreadRadius: 2,
+                  blurRadius: 1,
+                  offset: Offset(1, 1),
+                  color: AppColors.bioColor.withOpacity(.2)
+              )
+            ]
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                    'Price',
+                    style: AppStyles.bottomPriceStyle
+                ),
+                Text(
+                  '/hour',
+                  style: AppStyles.time1Style,
+                ),
+                Spacer(),
+                Text(
+                    '350\$',
+                    style: AppStyles.montMedium.copyWith(color: AppColors.red)
+                ),
+              ],
+            ),
+            SizedBox(height: height*.01,),
+            SizedBox(
+              width: double.infinity,
+              height: height*.06,
+              child: ElevatedButton(
+                onPressed:(){
+                  Navigator.pushNamed(context, AppRoutes.doctorPaymentScreen,arguments: {
+                    "time":"${selectedTime.hour}:${selectedTime.minute}",
+                    "date":selectedDateText,
+                  });
+
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.blueBottom,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 0,
+                ),
+                child: Text(
+                    'Continue to Pay',
+                    style: AppStyles.montMedium.copyWith(color: AppColors.white)
+                ),
+              ),
+            ),
           ],
         ),
       ),

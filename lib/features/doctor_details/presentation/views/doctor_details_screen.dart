@@ -186,71 +186,68 @@ class DoctorDetailsScreen extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child:  Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Price',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Text(
-                        '/hour',
-                        style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-                      ),
-                      Spacer(),
-                      Text(
-                        '350\$',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFFFF5722),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // Continue button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 40,
-                    child: ElevatedButton(
-                      onPressed:(){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen()));
-
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF4285F4),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        elevation: 0,
-                      ),
-                      child: Text(
-                        'Continue to Pay',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ),
 
         ],
+      ),
+      bottomNavigationBar:
+      Container(
+        height: height*.13,
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              spreadRadius: 2,
+              blurRadius: 1,
+              offset: Offset(1, 1),
+              color: AppColors.bioColor.withOpacity(.2)
+            )
+          ]
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  'Price',
+                  style: AppStyles.bottomPriceStyle
+                ),
+                Text(
+                  '/hour',
+                  style: AppStyles.time1Style,
+                ),
+                Spacer(),
+                Text(
+                  '350\$',
+                  style: AppStyles.montMedium.copyWith(color: AppColors.red)
+                ),
+              ],
+            ),
+            SizedBox(height: height*.01,),
+            SizedBox(
+              width: double.infinity,
+              height: height*.06,
+              child: ElevatedButton(
+                onPressed:(){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen()));
+
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.blueBottom,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 0,
+                ),
+                child: Text(
+                  'Continue to Pay',
+                  style: AppStyles.montMedium.copyWith(color: AppColors.white)
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

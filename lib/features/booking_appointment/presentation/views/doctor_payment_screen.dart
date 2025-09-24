@@ -35,11 +35,15 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
-        leading: Icon(CupertinoIcons.back, color: AppColors.black),
+        leading:IconButton(
+        icon: Icon(CupertinoIcons.back, color: AppColors.black),
+    onPressed: () => Navigator.pop(context)),
         title: Text("Book Appointment", style: AppStyles.appBarTitleStyle),
         centerTitle: true,
       ),
@@ -228,60 +232,55 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    color: Colors.white,
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
+                    height: height*.13,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              spreadRadius: 2,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
+                              color: AppColors.bioColor.withOpacity(.2)
+                          )
+                        ]
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
                             Text(
-                              'Price',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                              ),
+                                'Price',
+                                style: AppStyles.bottomPriceStyle
                             ),
                             Text(
                               '/hour',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey[600],
-                              ),
+                              style: AppStyles.time1Style,
                             ),
                             Spacer(),
                             Text(
-                              '350\$',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xFFFF5722),
-                              ),
+                                '350\$',
+                                style: AppStyles.montMedium.copyWith(color: AppColors.red)
                             ),
                           ],
                         ),
-                        SizedBox(height: 20),
-                        // Continue button
+                        SizedBox(height: height*.01,),
                         SizedBox(
                           width: double.infinity,
-                          height: 50,
+                          height: height*.06,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed:(){},
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF4285F4),
+                              backgroundColor: AppColors.blueBottom,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               elevation: 0,
                             ),
                             child: Text(
-                              ' Pay ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
+                                'Pay',
+                                style: AppStyles.montMedium.copyWith(color: AppColors.white)
                             ),
                           ),
                         ),

@@ -74,7 +74,7 @@ class AppStyles{
   );
   static TextStyle bottomPriceStyle=TextStyle(
       color: AppColors.black,
-      fontSize:24,
+      fontSize:20,
       fontWeight: FontWeight.w500,
       fontFamily: AppFonts.montserrat
   );
