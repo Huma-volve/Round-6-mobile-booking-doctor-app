@@ -21,12 +21,9 @@ class CustomTextFormFeild extends StatelessWidget {
     this.readOnly,
     this.onTap,
     this.inputFormatters,
-<<<<<<< HEAD
     this.minLines,
-=======
     this.filled,
     this.fillColor,
->>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
   });
 
   final double? border;
@@ -75,12 +72,8 @@ class CustomTextFormFeild extends StatelessWidget {
 
       maxLines: maxLines,
 
-<<<<<<< HEAD
       minLines: minLines,
 
-=======
-      minLines: 1,
->>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
       obscureText: obscurText,
 
       validator: validator,
@@ -113,11 +106,8 @@ class CustomTextFormFeild extends StatelessWidget {
         suffixIcon: suffixIcon,
 
         prefixIcon: prefixIcon,
-<<<<<<< HEAD
-=======
         filled: filled,
         fillColor: fillColor,
->>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
       ),
 
       onTap: onTap,
@@ -130,11 +120,7 @@ class CustomTextFormFeild extends StatelessWidget {
           ? BorderRadius.circular(10)
           : BorderRadius.circular(border!),
 
-<<<<<<< HEAD
-      borderSide: BorderSide(color: color ?? Colors.grey),
-=======
       borderSide: BorderSide(color: color ?? Colors.white),
->>>>>>> f5d140e14759fabd2fc07f5cac2528c7b5bd6f10
     );
   }
 }
