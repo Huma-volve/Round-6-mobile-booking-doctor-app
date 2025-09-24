@@ -11,8 +11,7 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-lib/features/booking_appointment/domain/payment/stripe_keys.dart
-
+keys.inv
 # IntelliJ related
 *.iml
 *.ipr
