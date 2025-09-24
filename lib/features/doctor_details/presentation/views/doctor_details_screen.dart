@@ -1,6 +1,7 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/doctor_details/calender.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -186,59 +187,60 @@ class DoctorDetailsScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Container(
-              width: width,
+            child:  Container(
+              color: Colors.white,
               padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                boxShadow: [
-                  BoxShadow(
-                    offset: (Offset(0, -1)),
-                    blurRadius: 5,
-                    spreadRadius: .3,
-                    color: AppColors.bioColor.withOpacity(.4),
-                  ),
-                ],
-              ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(text: "/hour", style: AppStyles.bioStyle),
-                          ],
-                          text: "Price",
-                          style: AppStyles.bottomPriceStyle,
+                      Text(
+                        'Price',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
                       ),
                       Text(
-                        r"350$",
-                        style: AppStyles.montMedium.copyWith(
-                          color: AppColors.red,
+                        '/hour',
+                        style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                      ),
+                      Spacer(),
+                      Text(
+                        '350\$',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFFFF5722),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: height * .003),
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: width * .9,
-                      height: height * .04,
-                      decoration: BoxDecoration(
-                        color: AppColors.blueBottom,
-                        borderRadius: BorderRadius.circular(8),
+
+                  // Continue button
+                  SizedBox(
+                    width: double.infinity,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed:(){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BookAppointmentScreen()));
+
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF4285F4),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        elevation: 0,
                       ),
-                      child: Center(
-                        child: Text(
-                          "Book Appointment",
-                          style: AppStyles.montMedium.copyWith(
-                            color: AppColors.white,
-                          ),
+                      child: Text(
+                        'Continue to Pay',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
@@ -246,7 +248,8 @@ class DoctorDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+            ),
+
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors{
   static const Color white=Color(0xffFFFFFF);
   static const Color black=Color(0xff000000);
@@ -10,6 +12,7 @@ class AppColors{
   static const Color selectedDayColor=Color(0xffe8eff8);
   static const Color red=Color(0xffFC4B4E);
   static const Color yellow=Color(0xffF9E000);
+  static  Color grey= Colors.grey[100]!;
 
 
 
