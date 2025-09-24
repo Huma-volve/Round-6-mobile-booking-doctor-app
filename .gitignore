@@ -11,6 +11,7 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+lib/features/booking_appointment/domain/payment/stripe_keys.dart
 keys.inv
 # IntelliJ related
 *.iml
@@ -20,6 +21,7 @@ keys.inv
 # Secrets
 keys.env
 lib/features/booking_appointment/domain/payment/stripe_keys.dart
+
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
