@@ -1,7 +1,7 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
-import 'package:booking_doctor/features/doctor_details/calender.dart';
+import 'package:booking_doctor/features/booking_appointment/presentation/views/doctor_appointment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -225,7 +225,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                     height: 40,
                     child: ElevatedButton(
                       onPressed:(){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BookAppointmentScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen()));
 
                       },
                       style: ElevatedButton.styleFrom(

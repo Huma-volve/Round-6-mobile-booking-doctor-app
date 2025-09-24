@@ -17,6 +17,9 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
+# Secrets
+keys.env
+lib/features/booking_appointment/domain/payment/stripe_keys.dart
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line

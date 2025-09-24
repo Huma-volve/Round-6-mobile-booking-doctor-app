@@ -1,14 +1,15 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
+import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/features/doctor_details/presentation/views/doctor_details_screen.dart';
 import 'package:flutter/material.dart';
 
-class BookAppointmentScreen extends StatefulWidget {
+class DoctorAppointmentScreen extends StatefulWidget {
   @override
-  _BookAppointmentScreenState createState() => _BookAppointmentScreenState();
+  _DoctorAppointmentScreenState createState() => _DoctorAppointmentScreenState();
 }
 
-class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
+class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
   DateTime currentMonth = DateTime(2025, 7); // July 2025
   int? selectedDay;
   String selectedDateText = "Monday, July 21";
@@ -419,7 +420,10 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     child: ElevatedButton(
                       onPressed: selectedDay != null
                           ? () {
-                              // Handle continue to pay
+                        Navigator.pushNamed(context, AppRoutes.doctorPaymentScreen,arguments:{
+                          "time":"${selectedTime.hour}:${selectedTime.minute}",
+                          "date":selectedDateText
+                        });
                             }
                           : null,
                       style: ElevatedButton.styleFrom(
