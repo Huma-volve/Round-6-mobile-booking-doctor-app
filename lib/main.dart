@@ -16,7 +16,6 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       initialRoute: AppRoutes.splachViewRouteName,
       onGenerateRoute: AppRouters.onGenerateRoute,
 

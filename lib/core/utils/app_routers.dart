@@ -3,6 +3,13 @@ import 'package:booking_doctor/features/fqas_and_privace_policy/views/fqa_view.d
 import 'package:booking_doctor/features/fqas_and_privace_policy/views/privace_plicy_view.dart';
 import 'package:booking_doctor/features/my_booking/presentation/views/my_booking.dart';
 import 'package:booking_doctor/features/onboarding/presentation/views/onboarding.dart';
+import 'package:booking_doctor/features/profile/presentation/views/add_new_card.dart';
+import 'package:booking_doctor/features/profile/presentation/views/edit_profile_screen.dart';
+import 'package:booking_doctor/features/profile/presentation/views/password_management_screen.dart';
+import 'package:booking_doctor/features/profile/presentation/views/payment-method_screen.dart';
+import 'package:booking_doctor/features/profile/presentation/views/payment_details_screen.dart';
+import 'package:booking_doctor/features/profile/presentation/views/profile_screen.dart';
+import 'package:booking_doctor/features/profile/presentation/views/setting_screen.dart';
 import 'package:booking_doctor/features/review/presentation/views/add_review_view.dart';
 import 'package:booking_doctor/features/splach/splach_view.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +50,27 @@ class AppRouters {
         return MaterialPageRoute(builder: (context) => FavouriteView());
       case AppRoutes.notification:
         return MaterialPageRoute(builder: (context) => NotificationView());
+
+      case AppRoutes.addNewCard:
+        return MaterialPageRoute(builder: (context) => AddNewCard());
+
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(builder: (context) => EditProfileScreen());
+
+      case AppRoutes.passwordManagment:
+        return MaterialPageRoute(builder: (context) => PasswordManageScreen());
+
+      case AppRoutes.paymentDetails:
+        return MaterialPageRoute(builder: (context) => PaymentDetailsScreen());
+
+      case AppRoutes.paymentMethod:
+        return MaterialPageRoute(builder: (context) => PaymentMethodScreen());
+
+      case AppRoutes.setting:
+        return MaterialPageRoute(builder: (context) => SettingScreen());
+
+      case AppRoutes.profile:
+        return MaterialPageRoute(builder: (context) => ProfileScreen());
       default:
         return MaterialPageRoute(
           builder: (_) =>

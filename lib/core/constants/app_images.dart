@@ -1,4 +1,7 @@
 abstract class AppImages {
+  static final String profileImage = 'assets/images/profile.png';
+  static final String blueGradientCreditCard = 'assets/images/blue-gradient.png';
+  static final String creditCard = 'assets/images/credit-card-1.png';
   static const String homeImage = "assets/images/home_image.png";
   static const String fakeImage = "assets/images/fake_image.jpg";
   static const String defaultFaverouitImage =
