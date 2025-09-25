@@ -20,7 +20,6 @@ keys.inv
 .idea/
 # Secrets
 keys.env
-lib/features/booking_appointment/domain/payment/stripe_keys.dart
 
 
 # The .vscode folder contains launch configuration and tasks you configure in
