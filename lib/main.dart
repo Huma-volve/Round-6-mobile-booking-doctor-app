@@ -10,7 +10,6 @@ void main()async {
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']!;
   runApp(DevicePreview(enabled: true, builder: (context) => const DoctorApp()));
 }
-
 class DoctorApp extends StatelessWidget {
   const DoctorApp({super.key});
 
@@ -18,7 +17,6 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       onGenerateRoute: AppRouters.onGenerateRoute,
       initialRoute: AppRoutes.doctorDetailsScreen,
       //initialRoute: AppRoutes.splachViewRouteName,
