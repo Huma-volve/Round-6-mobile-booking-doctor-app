@@ -224,15 +224,13 @@ class DoctorDetailsScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: height*.01,),
+            SizedBox(height: height*.0035,),
             SizedBox(
               width: double.infinity,
-              height: height*.06,
+              height: height*.049,
               child: ElevatedButton(
                 onPressed:(){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen()));
-
-                },
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen()));},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.blueBottom,
                   shape: RoundedRectangleBorder(

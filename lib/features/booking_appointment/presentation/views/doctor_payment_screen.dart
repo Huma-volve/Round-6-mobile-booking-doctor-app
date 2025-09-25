@@ -265,10 +265,10 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: height*.01,),
+                        SizedBox(height: height*.003,),
                         SizedBox(
                           width: double.infinity,
-                          height: height*.06,
+                          height: height*.05,
                           child: ElevatedButton(
                             onPressed:(){},
                             style: ElevatedButton.styleFrom(
