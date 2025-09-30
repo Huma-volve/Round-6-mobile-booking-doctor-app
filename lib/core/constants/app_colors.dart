@@ -1,9 +1,54 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-abstract class AppColors {
-  static Color primaryColor = Color(0xff145DB8);
-  static Color secondaryColor = Color(0xff05162C);
-  static Color greySemiDarkColor = Color(0xff6D7379);
-  static Color blackColor = Color(0xff000000);
-  static Color whiteColor = Color(0xffffffff);
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+abstract class AppColors{
+  static const Color white=Color(0xffFFFFFF);
+  static const Color black=Color(0xff000000);
+  static const Color bioColor=Color(0xff6D7379);
+  static const Color blueAddReview=Color(0xff145DB8);
+  static const Color blueBottom=Color(0xff145DB8);
+  static const Color green=Color(0xff53af4c);
+  static const Color selectedDayColor=Color(0xffe8eff8);
+  static const Color red=Color(0xffFC4B4E);
+  static const Color yellow=Color(0xffF9E000);
+  static  Color grey= Colors.grey[100]!;
+  static const Color profilColor = Color(0xffF5F6F7);
+  static const Color userColor = Color(0xff05162C);
+  static const Color addressColor = Color(0xff6D7379);
+  static const Color navigatorBottomColor = Color(0xff145DB8);
+  static const Color whiteColor = Color(0xffFFFFFF);
+  static const Color arrowColor = Color(0xff99A2AB);
+  static const Color switchActiveColor = Color(0xff4CAF50);
+  static const Color editProfileColor = Color(0xff99A2AB);
+  static Color primaryColor = const Color(0xff145DB8);
+  static Color secondaryColor = const Color(0xff05162C);
+  static Color greySemiDarkColor = const Color(0xff6D7379);
+  static Color blackColor = const Color(0xff000000);
+  static const Color ligthGrey = Color(0xffF5F6F7);
+  static const Color secondaryTextColor = Color(0xff05162C);
+  static const Color greyTextColor = Color(0xff99A2AB);
+  static const Color darkGreyColor = Color(0xff6D7379);
+  static const Color yellowColor = Color(0xffF9E000);
+  static const Color unratedColor = Color(0xffBBC1C7);
+  static const Color buttonBackgroundColor = Color(0xff145DB8);
+  static const Color grey280Color = Color(0xff6B7280);
+  static const Color black84BColor = Color(0xff33384B);
+  static const Color greenColor = Color(0xff4CAF50);
+  static const Color redColor = Color(0xffFC4B4E);
+  static const Color orangeColor = Color(0xffFFA726);
+  static const blackColor00 = Color(0xff000000);
+  static const searchTextColor = Color(0xff6d7379);
+  static const searchBackgroundColor = Color(0xffF5F6F7);
+  static const blackColor05 = Color(0xff05162C);
+  static const blueColor14 = Color(0xff1490E3);
+  static const greyColor40 = Color(0xff404448);
+  static const greyColor99 = Color(0xff99A2AB);
+  static const greyColorF5 = Color(0xffF5F6F7);
+  static const blueColor149 = Color(0xff145DB8);
+  static const greyColorC4 = Color(0xffC4C4C4);
+  static const greyColorBB = Color(0xffBBC1C7);
+  static const blackColor22 = Color(0xff22172A);
+  static const blueColor12 = Color(0xff1283CF);
 }

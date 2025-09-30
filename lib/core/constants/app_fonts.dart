@@ -1,5 +1,5 @@
-class AppFonts {
-  AppFonts._();
-  static const String georgia = 'Georgia';
-  static const String montserrat = 'Montserrat';
+class AppFonts{
+
+  static const String georgia = "Georgia";
+  static const String montserrat = "Montserrat";
 }

@@ -7,6 +7,7 @@ import 'package:booking_doctor/features/home/presentation/cubit/home_cubit.dart'
 import 'package:booking_doctor/features/home/presentation/views/home_view.dart';
 import 'package:booking_doctor/features/nav_bar/presentation/cubit/navbar_cubit.dart';
 import 'package:booking_doctor/features/nav_bar/presentation/views/widgets/bottom_navigation_bar_item_widget.dart';
+import 'package:booking_doctor/features/profile/presentation/views/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +20,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
       child: HomeView(),
     ),
     Container(color: Colors.amber),
-    HomeView(),
+    ProfileScreen(),
   ];
 
   @override
