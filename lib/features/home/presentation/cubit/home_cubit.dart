@@ -1,20 +1,20 @@
 import 'package:booking_doctor/features/home/domain/entities/doctor_model.dart';
 import 'package:booking_doctor/features/home/domain/use_case/get_doctor_near_you.dart';
+import 'package:booking_doctor/features/home/presentation/cubit/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit({required this.getDoctorNearYouUseCase}) : super(HomeInitial());
+
   List<DoctorEntity> doctorsNearYou = [];
-  List<DoctorEntity> favouritedDoctors = [];
   final GetDoctorNearYouUseCase getDoctorNearYouUseCase;
-  int indexInFavourite = 0;
+  int posInCate = 0;
+
   getDoctorNearYou() async {
     try {
       emit(HomeLoading());
       doctorsNearYou = await getDoctorNearYouUseCase.execute();
-      emit(HomeLoaded(doctors: doctorsNearYou));
+      emit(HomeLoaded(doctors: doctorsNearYou, posInCate: posInCate));
     } on Exception catch (e) {
       emit(HomeFaliure(massage: e.toString()));
     }
@@ -27,14 +27,14 @@ class HomeCubit extends Cubit<HomeState> {
         isFavourite: !doctorsNearYou[index].isFavourite,
       );
 
-      emit(HomeLoaded(doctors: List.from(doctorsNearYou)));
+      emit(
+        HomeLoaded(doctors: List.from(doctorsNearYou), posInCate: posInCate),
+      );
     }
   }
 
-  // getListFavourite() {
-  //   final favouriteDoctors = doctorsNearYou
-  //       .where((doctor) => doctor.isFavourite)
-  //       .toList();
-  //   emit(FavouriteLoaded(doctors: favouriteDoctors));
-  // }
+  changeInCategory(int pos) {
+    posInCate = pos;
+    emit(HomeLoaded(doctors: doctorsNearYou, posInCate: posInCate));
+  }
 }

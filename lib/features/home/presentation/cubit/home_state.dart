@@ -1,5 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-part of 'home_cubit.dart';
+import 'package:booking_doctor/features/home/domain/entities/doctor_model.dart';
 
 abstract class HomeState {}
 
@@ -8,16 +7,18 @@ class HomeInitial extends HomeState {}
 class HomeLoading extends HomeState {}
 
 class HomeLoaded extends HomeState {
-  List<DoctorEntity> doctors;
-  HomeLoaded({required this.doctors});
+  final List<DoctorEntity> doctors;
+  final int posInCate;
+
+  HomeLoaded({required this.doctors, this.posInCate = 0});
 }
 
 class HomeFaliure extends HomeState {
-  String massage;
+  final String massage;
   HomeFaliure({required this.massage});
 }
 
 class FavouriteLoaded extends HomeState {
-  List<DoctorEntity> doctors;
+  final List<DoctorEntity> doctors;
   FavouriteLoaded({required this.doctors});
 }

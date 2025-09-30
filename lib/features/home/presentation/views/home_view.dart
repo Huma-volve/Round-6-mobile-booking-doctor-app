@@ -2,6 +2,7 @@ import 'package:booking_doctor/core/constants/app_strings.dart';
 import 'package:booking_doctor/core/helpers/size_config.dart';
 import 'package:booking_doctor/core/widgets/search_text_form_field.dart';
 import 'package:booking_doctor/features/home/presentation/cubit/home_cubit.dart';
+import 'package:booking_doctor/features/home/presentation/cubit/home_state.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/home_image_widget.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/list_doctoe_widget.dart';
@@ -60,7 +61,9 @@ class HomeView extends StatelessWidget {
                   );
                 }
                 if (state is HomeFaliure) {
-                  SliverToBoxAdapter(child: Center(child: Text("Opps, Error")));
+                  return SliverToBoxAdapter(
+                    child: Center(child: Text("Opps, Error")),
+                  );
                 }
                 return SliverToBoxAdapter(child: SizedBox.shrink());
               },
