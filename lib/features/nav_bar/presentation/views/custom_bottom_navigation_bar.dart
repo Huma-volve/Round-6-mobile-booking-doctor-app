@@ -1,6 +1,9 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_strings.dart';
+import 'package:booking_doctor/core/services/service_locator.dart';
+import 'package:booking_doctor/features/home/domain/use_case/get_doctor_near_you.dart';
+import 'package:booking_doctor/features/home/presentation/cubit/home_cubit.dart';
 import 'package:booking_doctor/features/home/presentation/views/home_view.dart';
 import 'package:booking_doctor/features/nav_bar/presentation/cubit/navbar_cubit.dart';
 import 'package:booking_doctor/features/nav_bar/presentation/views/widgets/bottom_navigation_bar_item_widget.dart';
@@ -11,7 +14,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
   CustomBottomNavigationBar({super.key});
 
   List<Widget> screens = [
-    HomeView(),
+    BlocProvider(
+      create: (context) => sl<HomeCubit>()..getDoctorNearYou(),
+      child: HomeView(),
+    ),
     Container(color: Colors.amber),
     HomeView(),
   ];
