@@ -1,14 +1,7 @@
 import 'package:booking_doctor/core/constants/app_routes.dart';
-import 'package:booking_doctor/core/services/service_locator.dart';
 import 'package:booking_doctor/core/utils/app_routers.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-
-
-void main() async {
-  await setUpServiceLocator();
-  runApp(DevicePreview(builder: (context) => DoctorApp()));
-  // runApp(DoctorApp());
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 void main()async {
@@ -17,6 +10,7 @@ void main()async {
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']!;
   runApp(DevicePreview(enabled: true, builder: (context) => const DoctorApp()));
 }
+
 class DoctorApp extends StatelessWidget {
   const DoctorApp({super.key});
 
@@ -27,7 +21,6 @@ class DoctorApp extends StatelessWidget {
       onGenerateRoute: AppRouters.onGenerateRoute,
       initialRoute: AppRoutes.doctorDetailsScreen,
       //initialRoute: AppRoutes.splachViewRouteName,
-
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     );
   }
