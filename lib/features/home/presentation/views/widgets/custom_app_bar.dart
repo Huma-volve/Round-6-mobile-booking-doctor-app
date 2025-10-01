@@ -7,7 +7,10 @@ import 'package:booking_doctor/features/home/presentation/views/widgets/custom_a
 import 'package:booking_doctor/features/home/presentation/views/widgets/dashed_button.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/location_row.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 88e1a3766a44216213bf4318aaf8f16ca2ee513d
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
