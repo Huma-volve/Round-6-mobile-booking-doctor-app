@@ -1,6 +1,6 @@
 import 'package:booking_doctor/features/favourite/domain/entities/favourite_hospital_model.dart';
 import 'package:booking_doctor/features/favourite/domain/entities/favourte_doctor_model.dart';
-import 'package:booking_doctor/features/home/domain/entities/doctor_model.dart';
+
 
 List<FavouriteHospitalModel> favouriteHospitalData = [
   FavouriteHospitalModel(

@@ -1,5 +1,4 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
-import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_strings.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
@@ -7,9 +6,8 @@ import 'package:booking_doctor/core/helpers/size_config.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/custom_appbar_right_bottons.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/dashed_button.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/location_row.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});

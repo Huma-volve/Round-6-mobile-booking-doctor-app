@@ -1,5 +1,4 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
-import 'package:booking_doctor/core/constants/app_strings.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/core/widgets/doctor_card_widget/rated_and_date_widget.dart';
 import 'package:flutter/material.dart';
