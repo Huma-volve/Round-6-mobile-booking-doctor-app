@@ -2,11 +2,13 @@ import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/utils/app_routers.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-
-void main() {
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "keys.env");
+  Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']!;
   runApp(DevicePreview(enabled: true, builder: (context) => const DoctorApp()));
-
-  // runApp(DevicePreview(builder: (context) => DoctorApp()));
 }
 
 class DoctorApp extends StatelessWidget {
@@ -16,13 +18,10 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.splachViewRouteName,
       onGenerateRoute: AppRouters.onGenerateRoute,
-
+      initialRoute: AppRoutes.doctorDetailsScreen,
+      //initialRoute: AppRoutes.splachViewRouteName,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-
-      // onGenerateRoute: AppRouters.onGenerateRoute,
-      // initialRoute: AppRoutes.customBottomNav,
     );
   }
 }
