@@ -1,9 +1,12 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/features/booking_appointment/domain/payment/payment_manager.dart';
+import 'package:booking_doctor/features/booking_appointment/presentation/business_logic/payment/payment_cubit.dart';
+import 'package:booking_doctor/features/booking_appointment/presentation/views/doctor_appointment_screen.dart';
 import 'package:booking_doctor/features/doctor_details/presentation/views/doctor_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/app_styles.dart';
 
@@ -37,7 +40,9 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
+    return BlocProvider(
+  create: (context) => PaymentCubit()..getPayment(),
+  child: Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
@@ -47,7 +52,13 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
         title: Text("Book Appointment", style: AppStyles.appBarTitleStyle),
         centerTitle: true,
       ),
-      body: Padding(
+      body: BlocBuilder<PaymentCubit, PaymentState>(
+  builder: (context, state) {
+    if(state is PaymentLoading){
+      return loadingWidget();
+    }
+    else{
+      return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,7 +303,11 @@ class _DoctorPaymentScreenState extends State<DoctorPaymentScreen> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    }
+  },
+),
+    ),
+);
   }
 }

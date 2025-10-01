@@ -2,8 +2,10 @@ import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/features/booking_appointment/presentation/views/doctor_appointment_screen.dart';
+import 'package:booking_doctor/features/doctor_details/presentation/business_logic/doctor_details_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/custom_review_card.dart';
 
@@ -35,7 +37,9 @@ class DoctorDetailsScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
+    return BlocProvider(
+  create: (context) => DoctorDetailsCubit()..getDoctorDetails(),
+  child: Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
@@ -49,7 +53,13 @@ class DoctorDetailsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+      body: BlocBuilder<DoctorDetailsCubit, DoctorDetailsState>(
+  builder: (context, state) {
+    if(state is DoctorDetailsLoading){
+      return loadingWidget();
+    }
+    else{
+      return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
@@ -158,7 +168,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                             name: "Nabil Reyna",
                             time: "30 min",
                             reviewText:
-                                "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
+                            "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
                             imagePath: AppImages.myPhoto,
                             rating: 4.5,
                           ),
@@ -166,7 +176,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                             name: "Nabil Reyna",
                             time: "30 min",
                             reviewText:
-                                "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
+                            "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
                             imagePath: AppImages.myPhoto,
                             rating: 4.5,
                           ),
@@ -174,7 +184,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                             name: "Nabil Reyna",
                             time: "30 min",
                             reviewText:
-                                "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
+                            "Excellent service! Dr. Jessica Turner was attentive and thorough. The clinic was clean, and the staff were friendly. Highly recommend for in-person care!",
                             imagePath: AppImages.myPhoto,
                             rating: 4.5,
                           ),
@@ -188,7 +198,11 @@ class DoctorDetailsScreen extends StatelessWidget {
           ),
 
         ],
-      ),
+      );
+    }
+
+  },
+),
       bottomNavigationBar:
       Container(
         height: height*.13,
@@ -247,7 +261,8 @@ class DoctorDetailsScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+);
   }
 }
 

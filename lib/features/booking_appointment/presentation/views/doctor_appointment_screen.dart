@@ -1,10 +1,12 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/booking_appointment/presentation/business_logic/doctor_appointment/doctor_appointment_cubit.dart';
 import 'package:booking_doctor/features/booking_appointment/presentation/views/doctor_payment_screen.dart';
 import 'package:booking_doctor/features/doctor_details/presentation/views/doctor_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DoctorAppointmentScreen extends StatefulWidget {
   @override
@@ -96,11 +98,16 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     final daysInMonth = getDaysInMonth(currentMonth);
     final firstDayWeekday = getFirstDayOfMonth(currentMonth);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
+
+
+    return BlocProvider(
+  create: (context) => DoctorAppointmentCubit()..getAppointment(),
+  child: Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -111,7 +118,13 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
         title: Text('Book Appointment', style: AppStyles.appBarTitleStyle),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
+      body: BlocBuilder<DoctorAppointmentCubit, DoctorAppointmentState>(
+  builder: (context, state) {
+    if(state is DoctorAppointmentLoading){
+     return loadingWidget();
+    }
+    else{
+      return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
@@ -209,16 +222,16 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
                     children: dayNames
                         .map(
                           (day) => Expanded(
-                            child: Center(
-                              child: Text(
-                                day,
-                                style: AppStyles.addReviewStyle.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                        child: Center(
+                          child: Text(
+                            day,
+                            style: AppStyles.addReviewStyle.copyWith(
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
-                        )
+                        ),
+                      ),
+                    )
                         .toList(),
                   ),
                   SizedBox(height: 12),
@@ -298,8 +311,8 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
                               color: isSelected
                                   ? Color(0xFF4285F4)
                                   : (isAvailable
-                                        ? Color(0xFFE8F0FE)
-                                        : AppColors.grey),
+                                  ? Color(0xFFE8F0FE)
+                                  : AppColors.grey),
                               borderRadius: BorderRadius.circular(8),
                               border: isAvailable && !isSelected
                                   ? Border.all(color: Color(0xFFDAE3F0))
@@ -312,8 +325,8 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
                                   color: isSelected
                                       ? Colors.white
                                       : (isAvailable
-                                            ? Color(0xFF4285F4)
-                                            : Colors.grey[400]),
+                                      ? Color(0xFF4285F4)
+                                      : Colors.grey[400]),
                                   fontSize: 12,
                                   fontWeight: isSelected || isAvailable
                                       ? FontWeight.w500
@@ -358,12 +371,12 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
                               IconButton(
                                 onPressed: () async {
                                   final TimeOfDay? timeOfDay =
-                                      await showTimePicker(
-                                        context: context,
-                                        initialTime: selectedTime,
-                                        initialEntryMode:
-                                            TimePickerEntryMode.dial,
-                                      );
+                                  await showTimePicker(
+                                    context: context,
+                                    initialTime: selectedTime,
+                                    initialEntryMode:
+                                    TimePickerEntryMode.dial,
+                                  );
                                   if (timeOfDay != null) {
                                     setState(() {
                                       selectedTime = timeOfDay;
@@ -387,7 +400,11 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
             ),
           ],
         ),
-      ),
+      );
+    }
+
+  },
+),
       bottomNavigationBar:  Container(
         height: height*.13,
         padding: EdgeInsets.all(10),
@@ -450,6 +467,10 @@ class _DoctorAppointmentScreenState extends State<DoctorAppointmentScreen> {
           ],
         ),
       ),
-    );
+    ),
+);
   }
+}
+Widget loadingWidget(){
+  return Center(child:CircularProgressIndicator(color: AppColors.blueBottom,) ,);
 }
