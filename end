@@ -1,0 +1,51 @@
+[33ma0a8ed5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mSearchAndMapViewLogic[m[33m, [m[1;32mold-work[m[33m, [m[1;32mmain[m[33m)[m WIP: temporary changes
+[33m3f9a7ff[m[33m ([m[1;31morigin/profile[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'main' of https://github.com/Huma-volve/Round-6-mobile-booking-doctor-app
+[33m4f8125d[m updates in data
+[33m88e1a37[m Merge pull request #5 from Huma-volve/profile
+[33mce9a99b[m Merge branch 'main' into profile
+[33ma98843b[m changes
+[33m8fabac3[m merged main
+[33mcabbbbb[m Merge branch 'main' of https://github.com/Huma-volve/Round-6-mobile-booking-doctor-app
+[33med5f1ab[m add cubit
+[33m62e4994[m Merge pull request #4 from Huma-volve/home_feature
+[33m9f515a5[m[33m ([m[1;31morigin/home_feature[m[33m)[m Merge branch 'main' into home_feature
+[33m7fc9a60[m Category
+[33m915dfac[m Favourit Feature
+[33m63a685e[m pull main
+[33mebc04cf[m pull main
+[33me8fec04[m[33m ([m[1;31morigin/SearchAndMapViewLogic[m[33m)[m handle conflicts
+[33m3736f52[m[33m ([m[1;31morigin/bookingAndPayment[m[33m)[m push
+[33m8e55bd3[m use dotenv instead of stripe_keys.dart
+[33m597e617[m update gitignore to exclude secrets
+[33mfb5b4b4[m remove secrets files from tracking
+[33mc834545[m handle some bugs
+[33mc7ed7fd[m handle some bugs
+[33mb2bf67a[m handle some bugs
+[33m0ac7ae6[m finish doctor payment screen
+[33mf43d25d[m Merge pull request #2 from Huma-volve/profile
+[33m569de5f[m chnages
+[33mdce74d3[m changes
+[33m974b644[m Merge branch 'main' into profile
+[33ma701e1c[m profile pages ui
+[33m9e2a796[m[33m ([m[1;31morigin/SearchAndMapView[m[33m, [m[1;32mSearchAndMapView[m[33m)[m finish ui
+[33m81bf017[m finish doctor appointment screen
+[33mfef3b77[m Solve conflicts and merge
+[33m548e8d7[m splach done
+[33m5e1005a[m[33m ([m[1;31morigin/feature/onBoarding[m[33m)[m onboarding done
+[33mb5943e6[m[33m ([m[1;31morigin/feature/my_booking[m[33m)[m feature booking done
+[33m6d722eb[m finish doctor details screen
+[33m7c6643a[m[33m ([m[1;31morigin/feature/review[m[33m)[m feature reviews done
+[33mf5d140e[m Merge pull request #1 from Huma-volve/home_feature
+[33mde3e77c[m finish_location_ui
+[33mc3f5a8a[m finish_notification_ui
+[33mb7dd771[m finish_favourite_ui
+[33m2fcf198[m finish_home_ui
+[33m1258c44[m[33m ([m[1;31morigin/feature/FQAs_and_privacePolicy[m[33m)[m fearure FAQs and Privace policy done
+[33m60ae81d[m finish nav bar with cubit
+[33m5aced98[m finish arch
+[33m1f3f32c[m finish arch
+[33m3a50cd7[m edit files
+[33m28391fd[m edit files
+[33mf63b235[m edit files
+[33m4379330[m init project arch
+[33m3a1b368[m first commit
