@@ -17,29 +17,29 @@ class HomeView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Scaffold(
-        appBar: CustomAppBar(),
+        appBar: const CustomAppBar(),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: SizedBox(height: SizeConfig.blockSizeVertical * 1),
             ),
-            SliverToBoxAdapter(child: SearchTextFormField()),
+            const SliverToBoxAdapter(child: SearchTextFormField()),
             SliverToBoxAdapter(
               child: SizedBox(height: SizeConfig.blockSizeVertical * 2),
             ),
-            SliverToBoxAdapter(child: HomeTextRowWidget()),
+            const SliverToBoxAdapter(child: HomeTextRowWidget()),
             SliverToBoxAdapter(
               child: SizedBox(height: SizeConfig.blockSizeVertical * 1),
             ),
-            SliverToBoxAdapter(child: ListOfCategory()),
+            const SliverToBoxAdapter(child: ListOfCategory()),
             SliverToBoxAdapter(
               child: SizedBox(height: SizeConfig.blockSizeVertical * 2),
             ),
-            SliverToBoxAdapter(child: HomeImageWidget()),
+            const SliverToBoxAdapter(child: HomeImageWidget()),
             SliverToBoxAdapter(
               child: SizedBox(height: SizeConfig.blockSizeVertical * 2),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: HomeTextRowWidget(leftText: AppStrings.doctorsNearYou),
             ),
             SliverToBoxAdapter(

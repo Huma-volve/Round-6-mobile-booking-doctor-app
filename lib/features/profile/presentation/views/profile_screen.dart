@@ -3,12 +3,8 @@ import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_routes.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
-import 'package:booking_doctor/features/profile/presentation/views/payment-method_screen.dart';
-import 'package:booking_doctor/features/profile/presentation/views/edit_profile_screen.dart';
-import 'package:booking_doctor/features/profile/presentation/views/setting_screen.dart';
 import 'package:booking_doctor/features/profile/presentation/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -27,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(backgroundColor: Colors.white),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -42,9 +38,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: InkWell(
-                  onTap:  () {
-                        Navigator.pushNamed(context, AppRoutes.editProfile);
-                      },
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.editProfile);
+                  },
                   child: Row(
                     children: [
                       CircleAvatar(
@@ -57,13 +53,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Seif Mohamed",
+                              'Seif Mohamed',
                               style: AppStyles.georgia400Regular(
                                 context: context,
                               ),
                             ),
-                            SizedBox(height: 4),
-                  
+                            const SizedBox(height: 4),
+
                             Row(
                               children: [
                                 SvgPicture.asset(AppIcons.locationIcon),
@@ -79,12 +75,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                       ),
-                  
-                      
+
                       Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(AppIcons.arrowIcon),
-                        ),
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset(AppIcons.arrowIcon),
+                      ),
                     ],
                   ),
                 ),
@@ -117,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               InkWell(
-                 onTap: () {
+                onTap: () {
                   Navigator.pushNamed(context, AppRoutes.favourite);
                 },
                 child: CustomListTile(
@@ -129,9 +124,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               InkWell(
                 onTap: () {
-                                          Navigator.pushNamed(context, AppRoutes.setting);
-
-                 
+                  Navigator.pushNamed(context, AppRoutes.setting);
                 },
                 child: CustomListTile(
                   leading: SvgPicture.asset(AppIcons.settingIcon),
@@ -141,7 +134,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               InkWell(
-                 onTap: () {
+                onTap: () {
                   Navigator.pushNamed(context, AppRoutes.fAQsViewRouteName);
                 },
                 child: CustomListTile(
@@ -152,7 +145,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.privacyPolicyRouteName);
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.privacyPolicyRouteName,
+                  );
                 },
                 child: CustomListTile(
                   leading: SvgPicture.asset(AppIcons.chatIcon),

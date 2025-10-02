@@ -35,12 +35,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           child: Column(
             //crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomCircularImage(),
+              const CustomCircularImage(),
               Text(
-                "Seif Mohamed",
+                'Seif Mohamed',
                 style: AppStyles.georgia400Regular(context: context),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Row(
@@ -55,24 +55,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 64),
-              CustomEditProfileField(
+              const SizedBox(height: 64),
+              const CustomEditProfileField(
                 title: 'Email',
                 icon: AppIcons.emailInputIcon,
                 textInputType: TextInputType.emailAddress,
               ),
-              SizedBox(height: 16),
-              CustomEditProfileField(
+              const SizedBox(height: 16),
+              const CustomEditProfileField(
                 title: 'Full Name',
                 icon: AppIcons.nameInputIcon,
               ),
-              SizedBox(height: 16),
-              CustomIntelPhoneField(),
-              SizedBox(height: 16),
-              Align(
+              const SizedBox(height: 16),
+              const CustomIntelPhoneField(),
+              const SizedBox(height: 16),
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: CustomTextField(title: 'Select your birthday',)),
-              SizedBox(height: 16),
+                child: CustomTextField(title: 'Select your birthday'),
+              ),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
@@ -103,10 +104,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 48.0,
-                  horizontal: 0,
-                ),
+                padding: const EdgeInsets.symmetric(vertical: 48.0),
                 child: SizedBox(
                   width: double.infinity,
                   height: 50,

@@ -9,7 +9,6 @@ class CustomAppbarRightBottons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CustomButtonWithIcon(
           iconPath: AppIcons.iconsEmptyHeartIcon,
@@ -17,7 +16,7 @@ class CustomAppbarRightBottons extends StatelessWidget {
             Navigator.pushNamed(context, AppRoutes.favourite);
           },
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         CustomButtonWithIcon(
           onTap: () {
             Navigator.pushNamed(context, AppRoutes.notification);

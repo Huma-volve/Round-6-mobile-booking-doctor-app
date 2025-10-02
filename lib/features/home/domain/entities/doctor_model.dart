@@ -6,10 +6,10 @@ class DoctorModel {
   String rateNum;
   String date;
   DoctorModel({
-    this.imageUrl,
     required this.title,
     required this.location,
     required this.rateNum,
     required this.date,
+    this.imageUrl,
   });
 }

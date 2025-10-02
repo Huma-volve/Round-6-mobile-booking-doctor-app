@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class CustomAnimatedWidget extends StatelessWidget {
   const CustomAnimatedWidget({
-    super.key,
     required this.index,
     required this.delay,
     required this.child,
+    super.key,
   });
   final int index;
   final int delay;

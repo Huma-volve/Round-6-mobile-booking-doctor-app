@@ -9,11 +9,8 @@ class SpecialtiesModel {
 
 List<SpecialtiesModel> firstSpecialtiesList = [
   SpecialtiesModel(title: 'Dentist', image: AppIcons.iconsTooth),
-  SpecialtiesModel(
-    title: 'Cardiologist',
-    image: AppIcons.iconsCardiologistIcon,
-  ),
-  SpecialtiesModel(title: 'Ent', image: AppIcons.iconsEntIcon),
+  SpecialtiesModel(title: 'Cardiologist', image: AppIcons.heartIcon2),
+  SpecialtiesModel(title: 'Ent', image: AppIcons.noseIcon),
   SpecialtiesModel(title: 'Neurologist', image: AppIcons.iconsNeurologistIcon),
   SpecialtiesModel(
     title: 'General Practitioner',
@@ -45,10 +42,7 @@ List<SpecialtiesModel> firstSpecialtiesList = [
 
 List<SpecialtiesModel> secondSpecialtiesList = [
   SpecialtiesModel(title: 'Dentist', image: AppIcons.iconsTooth),
-  SpecialtiesModel(
-    title: 'Cardiologist',
-    image: AppIcons.iconsCardiologistIcon,
-  ),
+  SpecialtiesModel(title: 'Cardiologist', image: AppIcons.heartIcon2),
   SpecialtiesModel(
     title: 'Opthamologist',
     image: AppIcons.iconsOphthalmologist,
@@ -77,5 +71,5 @@ List<SpecialtiesModel> secondSpecialtiesList = [
     image: AppIcons.iconsStethoscope,
   ),
 
-  SpecialtiesModel(title: 'Ent', image: AppIcons.iconsEntIcon),
+  SpecialtiesModel(title: 'Ent', image: AppIcons.noseIcon),
 ];

@@ -1,6 +1,7 @@
-abstract class AppImages {
+// ignore_for_file: prefer_single_quotes
+class AppImages {
   AppImages._();
-
+  static const String test4 = 'assets/images/test4.png';
   static final String profileImage = 'assets/images/profile.png';
   static final String blueGradientCreditCard =
       'assets/images/blue-gradient.png';
@@ -30,4 +31,45 @@ abstract class AppImages {
   /// Assets for imagesTest3
   /// assets/images/test3.png
   static const String Test3 = 'assets/images/test3.png';
+  static const String imagesFiveImage = "assets/images/five_image.png";
+
+  /// Assets for imagesFourthImage
+  /// assets/images/fourth_image.png
+  static const String imagesFourthImage = "assets/images/fourth_image.png";
+
+  /// Assets for imagesHomeImage
+  /// assets/images/home_image.png
+
+  /// Assets for imagesOnboardinSecondImage
+  /// assets/images/onboardin_second_image.png
+
+  /// Assets for imagesOnboardingFristImage
+  /// assets/images/onboarding_frist_image.png
+
+  /// Assets for imagesProfile
+  /// assets/images/profile.png
+
+  /// Assets for imagesSecondImage
+  /// assets/images/second_image.png
+  static const String imagesSecondImage = "assets/images/second_image.png";
+
+  /// Assets for imagesSevenImage
+  /// assets/images/seven_image.png
+  static const String imagesSevenImage = "assets/images/seven_image.png";
+
+  /// Assets for imagesStarImage
+  /// assets/images/star_image.gif
+
+  /// Assets for imagesTest1
+  /// assets/images/test1.png
+
+  /// Assets for imagesTest2
+  /// assets/images/test2.png
+
+  /// Assets for imagesTest3
+  /// assets/images/test3.png
+
+  /// Assets for imagesThirdImage
+  /// assets/images/third_image.png
+  static const String imagesThirdImage = "assets/images/third_image.png";
 }

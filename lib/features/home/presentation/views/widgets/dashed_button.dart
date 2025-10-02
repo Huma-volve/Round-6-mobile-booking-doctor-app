@@ -11,11 +11,10 @@ class DashedButton extends StatelessWidget {
     return DottedBorder(
       options: RectDottedBorderOptions(
         dashPattern: [10, 5],
-        strokeWidth: 1,
         color: AppColors.primaryColor,
         // padding: EdgeInsets.symmetric(vertical: 8),
       ),
-      child: Container(
+      child: SizedBox(
         height: 37,
         width: double.infinity,
         child: Center(

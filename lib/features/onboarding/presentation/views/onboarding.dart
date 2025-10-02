@@ -58,7 +58,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 },
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             CustomAnimatedWidget(
               index: index,
@@ -74,7 +74,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         context,
                       ).copyWith(color: AppColors.secondaryTextColor),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       onboardingList[index].description,
 
@@ -85,11 +85,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ),
                     ),
 
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                     SmoothPageIndicator(
                       controller: controller,
                       count: onboardingList.length,
-                      effect: ExpandingDotsEffect(
+                      effect: const ExpandingDotsEffect(
                         spacing: 20.0,
                         radius: 15.0,
                         dotWidth: 10.0,
@@ -99,15 +99,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         dotColor: AppColors.unratedColor,
                       ),
                     ),
-                    SizedBox(height: 100),
+                    const SizedBox(height: 100),
                     CustomButton(
                       color: AppColors.buttonBackgroundColor,
                       textColor: AppColors.whiteColor,
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       onTap: () {
                         if (index < onboardingList.length - 1) {
                           controller.nextPage(
-                            duration: Duration(milliseconds: 500),
+                            duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn,
                           );
                         } else {

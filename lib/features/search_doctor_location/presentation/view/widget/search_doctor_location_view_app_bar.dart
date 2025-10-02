@@ -2,6 +2,7 @@ import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/map/presentation/view/map_view.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -37,7 +38,7 @@ class SearchDoctorLocationViewAppBar extends StatelessWidget {
                 SizedBox(
                   width: 20,
                   height: 20,
-                  child: SvgPicture.asset(AppIcons.iconsLocationIcon),
+                  child: SvgPicture.asset(AppIcons.areaIcon),
                 ),
                 const SizedBox(width: 5),
                 Text(
@@ -49,15 +50,20 @@ class SearchDoctorLocationViewAppBar extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              '129,El-Nasr Street',
-              style: AppStyles.textMedium14(
-                context: context,
-              ).copyWith(color: AppColors.greyColor40),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, MapsView.routeName);
+              },
+              child: Text(
+                '129,El-Nasr Street',
+                style: AppStyles.textMedium14(
+                  context: context,
+                ).copyWith(color: AppColors.greyColor40),
+              ),
             ),
           ],
         ),
-        Image.asset(AppImages.Test2, fit: BoxFit.cover),
+        Image.asset(AppImages.test4, fit: BoxFit.cover),
       ],
     );
   }

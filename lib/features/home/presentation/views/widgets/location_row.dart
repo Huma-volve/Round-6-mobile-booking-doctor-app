@@ -23,7 +23,7 @@ class LocationRow extends StatelessWidget {
             size: fontSize ?? 12,
           ).copyWith(color: colorText),
         ),
-        SizedBox(width: 3),
+        const SizedBox(width: 3),
         SvgPicture.asset(AppIcons.arrowDown),
       ],
     );

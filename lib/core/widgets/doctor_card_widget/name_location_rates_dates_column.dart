@@ -1,17 +1,16 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
-import 'package:booking_doctor/core/constants/app_strings.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/core/widgets/doctor_card_widget/rated_and_date_widget.dart';
 import 'package:flutter/material.dart';
 
 class NameLocationRatesDatesColumn extends StatelessWidget {
   const NameLocationRatesDatesColumn({
-    super.key,
     required this.size,
     required this.title,
     required this.location,
     required this.rate,
     required this.date,
+    super.key,
   });
 
   final Size size;

@@ -35,7 +35,7 @@ class AppRouters {
       case AppRoutes.splachViewRouteName:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
       case AppRoutes.fAQsViewRouteName:
-        return MaterialPageRoute(builder: (context) => FAQScreen());
+        return MaterialPageRoute(builder: (context) => const FAQScreen());
       case AppRoutes.privacyPolicyRouteName:
         return MaterialPageRoute(
           builder: (context) => const PrivacePolicyView(),
@@ -91,9 +91,11 @@ class AppRouters {
       case SearchView.routeName:
         return MaterialPageRoute(builder: (_) => const SearchView());
       case DoctorView.routeName:
-        return MaterialPageRoute(builder: (_) => const DoctorView());
-      case MapView.routeName:
-        return MaterialPageRoute(builder: (_) => const MapView());
+        return MaterialPageRoute(
+          builder: (_) => DoctorView(index: settings.arguments as int),
+        );
+      case MapsView.routeName:
+        return MaterialPageRoute(builder: (_) => const MapsView());
       case SpecialtiesView.routeName:
         return MaterialPageRoute(builder: (_) => const SpecialtiesView());
       case SearchDoctorLocationView.routeName:

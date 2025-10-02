@@ -51,8 +51,8 @@ class _DaysCalenderWidgetState extends State<DaysCalenderWidget> {
         scrollDirection: Axis.horizontal,
         itemCount: days.length,
         itemBuilder: (context, index) {
-          DateTime day = days[index];
-          bool isSelected = selectedIndex == index;
+          final DateTime day = days[index];
+          final bool isSelected = selectedIndex == index;
           return GestureDetector(
             onTap: () {
               setState(() {

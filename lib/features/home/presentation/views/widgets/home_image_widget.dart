@@ -6,11 +6,11 @@ class HomeImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.sizeOf(context);
     return Container(
       width: size.width,
       height: size.height * .24,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AppImages.homeImage),
           fit: BoxFit.fill,

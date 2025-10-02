@@ -14,12 +14,12 @@ class NotificationView extends StatelessWidget {
       appBar: customAppBar(context),
 
       body: isEmpty
-          ? EmptyBodyWidget(
+          ? const EmptyBodyWidget(
               imagePath: AppImages.emptyNotificationImage,
               mainTitle: AppStrings.nothingToDisplayHere,
               subTitle: AppStrings.wellNotify,
             )
-          : NotificationBody(),
+          : const NotificationBody(),
     );
   }
 }

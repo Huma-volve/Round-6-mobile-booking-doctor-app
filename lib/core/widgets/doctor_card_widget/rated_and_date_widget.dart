@@ -6,10 +6,10 @@ import 'package:flutter_svg/svg.dart';
 
 class RatedAndDateWidget extends StatelessWidget {
   const RatedAndDateWidget({
-    super.key,
     required this.size,
     required this.rate,
     required this.date,
+    super.key,
   });
 
   final Size size;

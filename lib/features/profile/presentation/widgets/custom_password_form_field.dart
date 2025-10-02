@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 class CustomPasswordFormField extends StatefulWidget {
   final String hint;
 
-  const CustomPasswordFormField({super.key, this.hint='********'});
+  const CustomPasswordFormField({super.key, this.hint = '********'});
 
   @override
   State<CustomPasswordFormField> createState() => _CustomTextFieldState();
@@ -21,7 +21,7 @@ class _CustomTextFieldState extends State<CustomPasswordFormField> {
     return TextFormField(
       obscureText: _obscureCurrent,
       decoration: InputDecoration(
-        hintText:widget.hint,
+        hintText: widget.hint,
         hintStyle: AppStyles.montserrat400Regular(
           context: context,
           font: 16.0,
@@ -41,11 +41,11 @@ class _CustomTextFieldState extends State<CustomPasswordFormField> {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: BorderSide(color: Colors.white, width: 2),
+          borderSide: const BorderSide(color: Colors.white, width: 2),
         ),
       ),
     );

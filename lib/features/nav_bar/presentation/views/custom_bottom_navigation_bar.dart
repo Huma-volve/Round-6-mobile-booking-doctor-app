@@ -12,14 +12,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
   CustomBottomNavigationBar({super.key});
 
   List<Widget> screens = [
-    HomeView(),
+    const HomeView(),
     Container(color: Colors.amber),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    NavbarCubit cubit = context.read<NavbarCubit>();
+    final NavbarCubit cubit = context.read<NavbarCubit>();
     return BlocBuilder<NavbarCubit, NavbarState>(
       builder: (context, state) {
         return Scaffold(

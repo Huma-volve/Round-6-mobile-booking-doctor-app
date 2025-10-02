@@ -7,7 +7,6 @@ import 'package:flutter_svg/svg.dart';
 
 class DoctorBookingContainerWidget extends StatelessWidget {
   const DoctorBookingContainerWidget({
-    super.key,
     required this.date,
     required this.states,
     required this.doctorName,
@@ -16,8 +15,9 @@ class DoctorBookingContainerWidget extends StatelessWidget {
     required this.button1Text,
     required this.button2Text,
     required this.image,
-    this.textColor,
     required this.onTap,
+    super.key,
+    this.textColor,
   });
   final String date;
   final String states;
@@ -33,13 +33,13 @@ class DoctorBookingContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: const Color.fromARGB(255, 197, 199, 202),
+            color: Color.fromARGB(255, 197, 199, 202),
             blurRadius: 0.001,
             spreadRadius: 0.001,
           ),
@@ -59,7 +59,7 @@ class DoctorBookingContainerWidget extends StatelessWidget {
                   context,
                 ).copyWith(color: AppColors.secondaryTextColor, fontSize: 12),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 states,
                 style: AppStyles.font24Regular(context).copyWith(
@@ -73,7 +73,7 @@ class DoctorBookingContainerWidget extends StatelessWidget {
               ),
             ],
           ),
-          Divider(
+          const Divider(
             color: AppColors.ligthGrey,
             thickness: 1,
             indent: 16,
@@ -118,7 +118,7 @@ class DoctorBookingContainerWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomButton(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   text: button1Text,
                   onTap: onTap,
                   color: AppColors.whiteColor,
@@ -128,7 +128,7 @@ class DoctorBookingContainerWidget extends StatelessWidget {
               ),
               Expanded(
                 child: CustomButton(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   text: button2Text,
                   onTap: () {},
                   color: AppColors.buttonBackgroundColor,

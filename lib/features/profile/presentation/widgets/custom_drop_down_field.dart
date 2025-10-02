@@ -8,8 +8,8 @@ class CustomDropDownField extends StatefulWidget {
   final String? title;
 
   const CustomDropDownField({
-    super.key,
     required this.calender,
+    super.key,
     this.selectedValue,
     this.title,
   });
@@ -42,14 +42,14 @@ class _CustomDropDownFieldState extends State<CustomDropDownField> {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
           borderSide: const BorderSide(color: Colors.white, width: 2),
         ),
       ),
-      value: _currentValue,
+      initialValue: _currentValue,
       items: widget.calender
           .map((y) => DropdownMenuItem(value: y, child: Text(y.toString())))
           .toList(),

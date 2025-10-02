@@ -28,7 +28,7 @@ class _AddReviewViewState extends State<AddReviewView> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios_new, size: 18),
+          icon: const Icon(Icons.arrow_back_ios_new, size: 18),
         ),
         title: Text(
           'Review',
@@ -61,14 +61,12 @@ class _AddReviewViewState extends State<AddReviewView> {
                     RatingBar.builder(
                       initialRating: _rating,
                       minRating: 1,
-                      direction: Axis.horizontal,
                       allowHalfRating: true,
-                      itemCount: 5,
                       itemSize: 32,
                       unratedColor: AppColors.unratedColor,
                       itemBuilder: (context, index) {
                         return CustomPaint(
-                          size: Size(40, 40),
+                          size: const Size(40, 40),
                           painter: CustomStar(
                             color: index < _rating
                                 ? AppColors.yellowColor
@@ -84,8 +82,8 @@ class _AddReviewViewState extends State<AddReviewView> {
                     ),
 
                     Text(
-                      "${_rating.toDouble()}/5",
-                      style: TextStyle(
+                      '${_rating.toDouble()}/5',
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
@@ -100,7 +98,7 @@ class _AddReviewViewState extends State<AddReviewView> {
                   context,
                 ).copyWith(color: AppColors.secondaryTextColor, fontSize: 20),
               ),
-              SizedBox(height: 21),
+              const SizedBox(height: 21),
               CustomTextFormFeild(
                 hintStyle: AppStyles.font16Meduim(
                   context,
@@ -152,7 +150,7 @@ class _AddReviewViewState extends State<AddReviewView> {
                 Image.asset(AppImages.starImage),
 
                 Text(
-                  "Thanks for your review",
+                  'Thanks for your review',
                   style: AppStyles.font24Regular(
                     context,
                   ).copyWith(color: AppColors.secondaryTextColor),
@@ -173,7 +171,7 @@ class _AddReviewViewState extends State<AddReviewView> {
                       Navigator.pop(context);
                     },
                     child: Text(
-                      "Done",
+                      'Done',
                       style: AppStyles.font16Meduim(
                         context,
                       ).copyWith(color: AppColors.whiteColor),
@@ -187,7 +185,7 @@ class _AddReviewViewState extends State<AddReviewView> {
                     //دي محتاجة تتغير Navigator.pushReplacementNamed(context, "/home");
                   },
                   child: Text(
-                    "Back to Home",
+                    'Back to Home',
                     style: AppStyles.font24Regular(
                       context,
                     ).copyWith(color: AppColors.grey280Color, fontSize: 14),

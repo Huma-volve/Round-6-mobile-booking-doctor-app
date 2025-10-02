@@ -11,13 +11,12 @@ class CustomButtonWithIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
 
         decoration: BoxDecoration(
-          shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(11),
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.grey,
               spreadRadius: 1,

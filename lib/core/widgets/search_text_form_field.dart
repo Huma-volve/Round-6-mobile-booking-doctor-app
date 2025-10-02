@@ -19,7 +19,7 @@ class SearchTextFormField extends StatelessWidget {
       hint: AppStrings.searchForSpecialtyDoctor,
       hintStyle: AppStyles.fontMontserratRegularGreyColor(context, size: 14),
       filled: true,
-      fillColor: Color(0xffF5F6F7),
+      fillColor: const Color(0xffF5F6F7),
       enabledBorderColor: AppColors.whiteColor,
       focusedBorderColor: AppColors.primaryColor,
     );

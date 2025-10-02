@@ -14,12 +14,12 @@ class FavouriteView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(context, title: AppStrings.yourFavorite),
       body: isEmpty
-          ? EmptyBodyWidget(
+          ? const EmptyBodyWidget(
               imagePath: AppImages.defaultFaverouitImage,
               mainTitle: AppStrings.yourFavorite1,
               subTitle: AppStrings.addYourFavoriteToFindItEasily,
             )
-          : FavouriteFilledBody(),
+          : const FavouriteFilledBody(),
     );
   }
 }

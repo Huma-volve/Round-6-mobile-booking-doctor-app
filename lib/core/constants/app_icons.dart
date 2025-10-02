@@ -4,7 +4,12 @@ class AppIcons {
 
   static const String arrowIcon = 'assets/icons/arrow.svg';
   static const String banknoteIcon = 'assets/icons/Banknote.svg';
+  static const String heartIcon2 =
+      'assets/icons/arcticons_emoji_anatomical_heart.svg';
+  static const String areaIcon = 'assets/icons/area.svg';
+  static const String eyeIcon = 'assets/icons/fa_regular_eye.svg';
   static const String bellIcon = 'assets/icons/bell.svg';
+  static const String noseIcon = 'assets/icons/healthicons_nose_outline.svg';
   static const String chatIcon = 'assets/icons/Chat Line.svg';
   static const String heartIcon = 'assets/icons/Heart.svg';
   static const String locationIcon = 'assets/icons/Location.svg';

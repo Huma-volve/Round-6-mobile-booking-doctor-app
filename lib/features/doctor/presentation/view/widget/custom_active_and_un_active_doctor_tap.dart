@@ -7,11 +7,13 @@ class CustomActiveAndUnActiveDoctorTap extends StatelessWidget {
     required this.image,
     required this.title,
     required this.isActive,
+
     super.key,
   });
   final String image;
   final String title;
   final bool isActive;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedCrossFade(

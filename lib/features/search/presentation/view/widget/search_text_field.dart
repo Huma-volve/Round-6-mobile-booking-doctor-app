@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
 class CustomSearchTextfield extends StatelessWidget {
-  const CustomSearchTextfield({super.key, this.onChanged});
+  const CustomSearchTextfield({super.key, this.onChanged, this.hintText});
   final void Function(String)? onChanged;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -22,7 +23,7 @@ class CustomSearchTextfield extends StatelessWidget {
         hintStyle: AppStyles.textRegular14(
           context: context,
         ).copyWith(color: AppColors.searchTextColor),
-        hintText: 'Search for specialty, doctor',
+        hintText: hintText ?? 'Search for specialty, doctor',
         contentPadding: const EdgeInsets.only(left: 12, right: 16),
         border: buildBorder(),
         enabledBorder: buildBorder(),

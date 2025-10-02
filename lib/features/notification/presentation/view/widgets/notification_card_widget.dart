@@ -5,10 +5,10 @@ import 'package:flutter_svg/svg.dart';
 
 class NotificationCardWidget extends StatelessWidget {
   const NotificationCardWidget({
-    Key? key,
-    this.onTap,
     required this.notificationModel,
-  }) : super(key: key);
+    super.key,
+    this.onTap,
+  });
   final void Function()? onTap;
   final NotificationModel notificationModel;
   @override
@@ -17,14 +17,14 @@ class NotificationCardWidget extends StatelessWidget {
       onTap: onTap,
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Color(0xffE8EFF8),
+          backgroundColor: const Color(0xffE8EFF8),
           child: SvgPicture.asset(
             notificationModel.imageUrl ?? AppIcons.upcomingIcon,
           ),
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text(notificationModel.title), Text("4h")],
+          children: [Text(notificationModel.title), const Text('4h')],
         ),
         subtitle: Text(notificationModel.description, maxLines: 1),
       ),

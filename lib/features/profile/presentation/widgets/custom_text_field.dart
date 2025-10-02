@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String title;
-  
-  const CustomTextField({super.key, required this.title});
+
+  const CustomTextField({required this.title, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      
       title,
       style: AppStyles.montserrat400Regular(
         context: context,

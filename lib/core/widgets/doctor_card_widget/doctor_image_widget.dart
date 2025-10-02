@@ -9,7 +9,7 @@ class DoctorImageWidget extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 89 / 86,
       child: ClipRRect(
-        borderRadius: BorderRadiusGeometry.only(
+        borderRadius: const BorderRadiusGeometry.only(
           topLeft: Radius.circular(14),
           bottomLeft: Radius.circular(14),
         ),

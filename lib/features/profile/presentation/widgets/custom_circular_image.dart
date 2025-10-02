@@ -7,18 +7,15 @@ import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
 
-
 class CustomCircularImage extends StatefulWidget {
-const CustomCircularImage({super.key});
-
-  
+  const CustomCircularImage({super.key});
 
   @override
   State<CustomCircularImage> createState() => _CustomCircularImageState();
 }
 
 class _CustomCircularImageState extends State<CustomCircularImage> {
-  File? _selectedImage; 
+  File? _selectedImage;
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickImage() async {
@@ -56,7 +53,7 @@ class _CustomCircularImageState extends State<CustomCircularImage> {
                 radius: 46,
                 backgroundImage: _selectedImage != null
                     ? FileImage(_selectedImage!)
-                    :AssetImage( AppImages.profileImage) as ImageProvider,
+                    : AssetImage(AppImages.profileImage) as ImageProvider,
               ),
             ),
           ),
@@ -69,7 +66,7 @@ class _CustomCircularImageState extends State<CustomCircularImage> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
-                border: Border.all(color: Colors.grey.shade300, width: 1),
+                border: Border.all(color: Colors.grey.shade300),
               ),
               child: SvgPicture.asset(
                 AppIcons.cameraPlusIcon,

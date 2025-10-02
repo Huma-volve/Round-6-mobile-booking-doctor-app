@@ -15,18 +15,17 @@ class _CustomIntelPhoneFieldState extends State<CustomIntelPhoneField> {
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
-      
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.profilColor,
         hintText: 'Enter Your Number',
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: const BorderSide(color: Colors.white),
         ),
         hintStyle: AppStyles.montserrat400Regular(
           context: context,
@@ -42,7 +41,7 @@ class _CustomIntelPhoneFieldState extends State<CustomIntelPhoneField> {
       },
       validator: (phone) {
         if (phone == null || phone.number.isEmpty) {
-          return "Please enter your phone number";
+          return 'Please enter your phone number';
         }
         return null;
       },

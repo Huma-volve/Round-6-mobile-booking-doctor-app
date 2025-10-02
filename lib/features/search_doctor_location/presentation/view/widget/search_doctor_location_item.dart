@@ -1,13 +1,16 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_icons.dart';
-import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/doctor/data/model/static_doctor_model_data.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class CustomSearchDoctorLocationItem extends StatelessWidget {
-  const CustomSearchDoctorLocationItem({super.key});
-
+  const CustomSearchDoctorLocationItem({
+    required this.staticDoctorDataModel,
+    super.key,
+  });
+  final StaticDoctorModelData staticDoctorDataModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +29,7 @@ class CustomSearchDoctorLocationItem extends StatelessWidget {
           SizedBox(
             height: MediaQuery.sizeOf(context).height * .11,
             width: MediaQuery.sizeOf(context).width * .23,
-            child: Image.asset(AppImages.Test1, fit: BoxFit.cover),
+            child: Image.asset(staticDoctorDataModel.image, fit: BoxFit.cover),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -39,7 +42,7 @@ class CustomSearchDoctorLocationItem extends StatelessWidget {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        'Robert Johnson',
+                        staticDoctorDataModel.name,
                         style: AppStyles.textRegular16(context: context)
                             .copyWith(
                               color: AppColors.blackColor00,
@@ -56,13 +59,13 @@ class CustomSearchDoctorLocationItem extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            'Orthopedic | El-Nasr Hospital',
+                            staticDoctorDataModel.specialty,
                             style: AppStyles.textRegular14(
                               context: context,
                             ).copyWith(color: AppColors.searchTextColor),
                           ),
                         ),
-                        SvgPicture.asset(AppIcons.iconsRedHeartIcon),
+                        SvgPicture.asset(staticDoctorDataModel.heartIcon),
                       ],
                     ),
                   ),
@@ -75,7 +78,7 @@ class CustomSearchDoctorLocationItem extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            '4.8',
+                            staticDoctorDataModel.rating.toString(),
                             style: AppStyles.textMedium14(
                               context: context,
                             ).copyWith(color: AppColors.blackColor05),
@@ -87,7 +90,7 @@ class CustomSearchDoctorLocationItem extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            '9:30am - 8:00pm',
+                            staticDoctorDataModel.workingHours,
                             style: AppStyles.textMedium14(
                               context: context,
                             ).copyWith(color: AppColors.blackColor05),

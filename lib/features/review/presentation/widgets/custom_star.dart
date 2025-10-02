@@ -6,7 +6,7 @@ class CustomStar extends CustomPainter {
   CustomStar({required this.color});
   @override
   void paint(Canvas canvas, Size size) {
-    Path path_0 = Path();
+    final Path path_0 = Path();
     path_0.moveTo(7.65331, 21.8334);
     path_0.cubicTo(7.79997, 21.1801, 7.53331, 20.2467, 7.06664, 19.7801);
     path_0.lineTo(3.82664, 16.5401);
@@ -24,11 +24,11 @@ class CustomStar extends CustomPainter {
     path_0.lineTo(7.65331, 21.8334);
     path_0.close();
 
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = color;
-    canvas.drawPath(path_0, paint_0_fill);
+    final Paint paint0Fill = Paint()..style = PaintingStyle.fill;
+    paint0Fill.color = color;
+    canvas.drawPath(path_0, paint0Fill);
 
-    Path path_1 = Path();
+    final Path path_1 = Path();
     path_1.moveTo(24.9334, 19.78);
     path_1.cubicTo(24.4534, 20.26, 24.1867, 21.18, 24.3467, 21.8334);
     path_1.lineTo(25.2667, 25.8467);
@@ -48,9 +48,9 @@ class CustomStar extends CustomPainter {
     path_1.lineTo(24.9334, 19.78);
     path_1.close();
 
-    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = color;
-    canvas.drawPath(path_1, paint_1_fill);
+    final Paint paint1Fill = Paint()..style = PaintingStyle.fill;
+    paint1Fill.color = color;
+    canvas.drawPath(path_1, paint1Fill);
   }
 
   @override

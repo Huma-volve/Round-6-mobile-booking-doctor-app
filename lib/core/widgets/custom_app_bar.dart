@@ -16,7 +16,7 @@ AppBar customAppBar(BuildContext context, {final String? title}) {
       icon: SvgPicture.asset(AppIcons.backArrow),
     ),
     title: Text(
-      title ?? "Notifications",
+      title ?? 'Notifications',
       style: AppStyles.fontGeorgiaRegularSecondaryColor(context, size: 24),
     ),
     centerTitle: true,

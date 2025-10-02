@@ -2,10 +2,6 @@ import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
-import 'package:booking_doctor/core/widgets/custom_text_form_field.dart';
-import 'package:booking_doctor/features/profile/presentation/widgets/custom_edit_profile_form.dart';
-import 'package:booking_doctor/features/profile/presentation/widgets/custom_password_form_field.dart';
-import 'package:booking_doctor/features/profile/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_multi_formatter/formatters/credit_card_cvc_input_formatter.dart';
 import 'package:flutter_multi_formatter/formatters/credit_card_expiration_input_formatter.dart';
@@ -41,21 +37,21 @@ class _AddNewCardState extends State<AddNewCard> {
           child: Column(
             children: [
               Image.asset(AppImages.blueGradientCreditCard),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Cardholder Name",
+                  'Cardholder Name',
                   style: AppStyles.montserrat400Regular(
                     context: context,
                     font: 14.0,
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "Cardholder Name",
+                  hintText: 'Cardholder Name',
                   hintStyle: AppStyles.montserrat400Regular(
                     context: context,
                     font: 16.0,
@@ -70,25 +66,25 @@ class _AddNewCardState extends State<AddNewCard> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Card Number",
+                  'Card Number',
                   style: AppStyles.montserrat400Regular(
                     context: context,
                     font: 14.0,
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 obscureText: _obscureCurrent,
                 keyboardType: TextInputType.number,
                 inputFormatters: [CreditCardNumberInputFormatter()],
                 decoration: InputDecoration(
-                  hintText: "Card Number",
+                  hintText: 'Card Number',
                   hintStyle: AppStyles.montserrat400Regular(
                     context: context,
                     font: 16.0,
@@ -113,28 +109,33 @@ class _AddNewCardState extends State<AddNewCard> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 32),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8,
+                  horizontal: 32,
+                ),
                 child: Row(
-                  
                   children: [
                     Expanded(
-                      flex: 1,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Expiry Date"),
-                          SizedBox(height: 8),
+                          const Text('Expiry Date'),
+                          const SizedBox(height: 8),
                           TextFormField(
                             keyboardType: TextInputType.number,
                             inputFormatters: [
                               CreditCardExpirationDateFormatter(),
                             ],
                             decoration: InputDecoration(
-                              hintText: "MM|YY",
-                              hintStyle: AppStyles.montserrat400Regular(context: context,font: 14.0,fontWeight: FontWeight.w500),
+                              hintText: 'MM|YY',
+                              hintStyle: AppStyles.montserrat400Regular(
+                                context: context,
+                                font: 14.0,
+                                fontWeight: FontWeight.w500,
+                              ),
                               filled: true,
                               fillColor: Colors.grey.shade100,
                               border: OutlineInputBorder(
@@ -146,20 +147,26 @@ class _AddNewCardState extends State<AddNewCard> {
                         ],
                       ),
                     ),
-                     
-                    SizedBox(width: 16,),
+
+                    const SizedBox(width: 16),
                     Expanded(
-                      flex: 1,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("CVV Code",style: AppStyles.montserrat400Regular(context: context,font: 14.0,fontWeight: FontWeight.w500),),
-                          SizedBox(height: 8),
+                          Text(
+                            'CVV Code',
+                            style: AppStyles.montserrat400Regular(
+                              context: context,
+                              font: 14.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
                           TextFormField(
                             keyboardType: TextInputType.number,
                             inputFormatters: [CreditCardCvcInputFormatter()],
                             decoration: InputDecoration(
-                              hintText: "123",
+                              hintText: '123',
                               filled: true,
                               fillColor: Colors.grey.shade100,
                               border: OutlineInputBorder(
@@ -179,7 +186,7 @@ class _AddNewCardState extends State<AddNewCard> {
         ),
       ),
 
-       bottomNavigationBar: Padding(
+      bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 16),
         child: SizedBox(
           width: double.infinity,

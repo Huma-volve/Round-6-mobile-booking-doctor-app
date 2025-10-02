@@ -7,15 +7,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DoctorCardWidget extends StatelessWidget {
-  const DoctorCardWidget({super.key, required this.doctorModel});
+  const DoctorCardWidget({required this.doctorModel, super.key});
   final DoctorModel doctorModel;
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.sizeOf(context);
     return Container(
       width: double.infinity,
       height: size.height * .12,
-      padding: EdgeInsets.only(right: 16),
+      padding: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.greySemiDarkColor),
         borderRadius: BorderRadius.circular(15),
@@ -31,7 +31,7 @@ class DoctorCardWidget extends StatelessWidget {
             rate: doctorModel.rateNum,
             date: doctorModel.date,
           ),
-          Spacer(),
+          const Spacer(),
           SvgPicture.asset(AppIcons.iconsFilledHeartIcon),
         ],
       ),

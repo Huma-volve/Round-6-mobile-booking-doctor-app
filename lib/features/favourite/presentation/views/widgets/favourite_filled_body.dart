@@ -23,13 +23,13 @@ class FavouriteFilledBody extends StatelessWidget {
                 context,
                 size: 16,
               ),
-              tabs: [
-                Tab(text: "Doctors"),
-                Tab(text: "Hospital"),
+              tabs: const [
+                Tab(text: 'Doctors'),
+                Tab(text: 'Hospital'),
               ],
             ),
-            SizedBox(height: 16),
-            Expanded(
+            const SizedBox(height: 16),
+            const Expanded(
               child: TabBarView(
                 children: [FavouriteListWidget(), FavouriteListWidget()],
               ),

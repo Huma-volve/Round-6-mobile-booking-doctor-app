@@ -1,10 +1,10 @@
 import 'package:booking_doctor/core/utils/app_routers.dart';
 import 'package:booking_doctor/features/search/presentation/view/search_view.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) => const DoctorApp()));
+  // runApp(DevicePreview(builder: (context) => const DoctorApp()));
+  runApp(const DoctorApp());
 }
 
 class DoctorApp extends StatelessWidget {

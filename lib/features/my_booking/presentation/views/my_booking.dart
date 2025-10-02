@@ -32,7 +32,7 @@ class _MyBookingViewState extends State<MyBookingView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DaysCalenderWidget(),
+            const DaysCalenderWidget(),
             DoctorBookingContainerWidget(
               onTap: () {
                 _showCancelPopup(context);
@@ -91,23 +91,23 @@ class _MyBookingViewState extends State<MyBookingView> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(AppImages.canceledImage),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
-                  "Warning!",
+                  'Warning!',
                   style: AppStyles.font20SemiBold(
                     context,
                   ).copyWith(color: AppColors.orangeColor),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  "Cancellation must be made at least 24 hours in advance to receive a\n refund",
+                  'Cancellation must be made at least 24 hours in advance to receive a\n refund',
                   style: AppStyles.font24Regular(
                     context,
                   ).copyWith(color: AppColors.grey280Color, fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Are you sure?',
                   style: AppStyles.font24Regular(
@@ -130,7 +130,7 @@ class _MyBookingViewState extends State<MyBookingView> {
                       Navigator.pop(context);
                     },
                     child: Text(
-                      "yes,Cancel",
+                      'yes,Cancel',
                       style: AppStyles.font16Meduim(
                         context,
                       ).copyWith(color: AppColors.whiteColor),

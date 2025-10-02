@@ -1,3 +1,4 @@
+import 'package:booking_doctor/features/doctor/presentation/view/doctor_view.dart';
 import 'package:booking_doctor/features/search/data/model/specialties_model.dart';
 import 'package:booking_doctor/features/specialties/presentation/view/widget/custom_specialties_item.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,18 @@ class SpecialtiesViewBody extends StatelessWidget {
             runSpacing: 16,
             children: List.generate(
               secondSpecialtiesList.length,
-              (index) => CustomSpecialtiesItem(
-                image: secondSpecialtiesList[index].image,
-                title: secondSpecialtiesList[index].title,
+              (index) => GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    DoctorView.routeName,
+                    arguments: index,
+                  );
+                },
+                child: CustomSpecialtiesItem(
+                  image: secondSpecialtiesList[index].image,
+                  title: secondSpecialtiesList[index].title,
+                ),
               ),
             ),
           ),

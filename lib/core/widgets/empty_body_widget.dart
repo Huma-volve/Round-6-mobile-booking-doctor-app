@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 class EmptyBodyWidget extends StatelessWidget {
   const EmptyBodyWidget({
-    super.key,
     required this.imagePath,
     required this.mainTitle,
     required this.subTitle,
+    super.key,
   });
   final String imagePath;
   final String mainTitle;
   final String subTitle;
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.sizeOf(context);
     return Align(
       child: Column(
         children: [

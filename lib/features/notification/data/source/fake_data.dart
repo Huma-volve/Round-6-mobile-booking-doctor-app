@@ -2,23 +2,23 @@ import 'package:booking_doctor/features/notification/domain/entities/notificatio
 
 List<NotificationModel> fakeData = [
   NotificationModel(
-    title: "Upcoming Appointment",
-    description: "OReminder: You have an appointment with...",
-    date: "1h",
+    title: 'Upcoming Appointment',
+    description: 'OReminder: You have an appointment with...',
+    date: '1h',
   ),
   NotificationModel(
-    title: "Upcoming Appointment",
-    description: "OReminder: You have an appointment with...",
-    date: "1h",
+    title: 'Upcoming Appointment',
+    description: 'OReminder: You have an appointment with...',
+    date: '1h',
   ),
   NotificationModel(
-    title: "Upcoming Appointment",
-    description: "OReminder: You have an appointment with...",
-    date: "1h",
+    title: 'Upcoming Appointment',
+    description: 'OReminder: You have an appointment with...',
+    date: '1h',
   ),
   NotificationModel(
-    title: "Upcoming Appointment",
-    description: "OReminder: You have an appointment with...",
-    date: "1h",
+    title: 'Upcoming Appointment',
+    description: 'OReminder: You have an appointment with...',
+    date: '1h',
   ),
 ];

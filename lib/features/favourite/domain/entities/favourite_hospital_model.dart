@@ -7,10 +7,10 @@ class FavouriteHospitalModel {
   String rateNum;
   String date;
   FavouriteHospitalModel({
-    this.imageUrl,
     required this.title,
     required this.location,
     required this.rateNum,
     required this.date,
+    this.imageUrl,
   });
 }

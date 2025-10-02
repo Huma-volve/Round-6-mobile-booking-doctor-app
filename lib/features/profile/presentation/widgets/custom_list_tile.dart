@@ -11,15 +11,15 @@ class CustomListTile extends StatelessWidget {
   final Color? titleColor;
   final double? fontSize;
 
-  CustomListTile({
-    super.key,
+  const CustomListTile({
     required this.leading,
     required this.title,
+    super.key,
     this.trailing,
     this.backgroundColor = AppColors.profilColor,
     this.titleStyle,
-    this.titleColor = AppColors.userColor, 
-    this.fontSize=20.0,
+    this.titleColor = AppColors.userColor,
+    this.fontSize = 20.0,
   });
 
   @override
@@ -37,7 +37,7 @@ class CustomListTile extends StatelessWidget {
           style: AppStyles.montserrat400Regular(
             context: context,
             color: titleColor,
-            font: fontSize
+            font: fontSize,
           ),
         ),
         trailing: trailing,

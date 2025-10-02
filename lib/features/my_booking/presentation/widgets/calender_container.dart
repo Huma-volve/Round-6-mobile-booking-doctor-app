@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class CalenderContainer extends StatelessWidget {
   const CalenderContainer({
-    super.key,
     required this.isSelected,
     required this.day,
+    super.key,
   });
 
   final bool isSelected;
@@ -28,7 +28,7 @@ class CalenderContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][day.weekday % 7],
+            ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day.weekday % 7],
             style: AppStyles.font16Meduim(context).copyWith(
               fontSize: 14,
               color: isSelected
@@ -38,7 +38,7 @@ class CalenderContainer extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            "${day.day}",
+            '${day.day}',
             style: AppStyles.font16Meduim(context).copyWith(
               fontSize: 14,
               color: isSelected

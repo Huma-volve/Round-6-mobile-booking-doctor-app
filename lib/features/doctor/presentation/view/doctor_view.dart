@@ -3,13 +3,14 @@ import 'package:booking_doctor/features/doctor/presentation/view/widget/doctor_v
 import 'package:flutter/material.dart';
 
 class DoctorView extends StatelessWidget {
-  const DoctorView({super.key});
+  const DoctorView({required this.index, super.key});
   static const routeName = 'doctor_view';
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context, title: 'Doctors'),
-      body: const DoctorViewBody(),
+      body: DoctorViewBody(index: index),
     );
   }
 }

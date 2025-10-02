@@ -1,11 +1,8 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
-import 'package:booking_doctor/core/constants/app_icons.dart';
 import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
 import 'package:booking_doctor/features/profile/presentation/views/add_new_card.dart';
-import 'package:booking_doctor/features/profile/presentation/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class PaymentDetailsScreen extends StatelessWidget {
   const PaymentDetailsScreen({super.key});

@@ -9,10 +9,10 @@ class ListOfCategory extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .06,
       child: ListView.separated(
-        separatorBuilder: (context, index) => SizedBox(width: 10),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
         scrollDirection: Axis.horizontal,
         itemCount: 10,
-        itemBuilder: (context, index) => CategoryItemWidget(),
+        itemBuilder: (context, index) => const CategoryItemWidget(),
       ),
     );
   }

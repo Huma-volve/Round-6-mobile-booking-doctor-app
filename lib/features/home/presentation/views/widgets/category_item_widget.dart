@@ -11,7 +11,7 @@ class CategoryItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.greySemiDarkColor),
         borderRadius: BorderRadius.circular(15),
@@ -20,7 +20,7 @@ class CategoryItemWidget extends StatelessWidget {
         children: [
           SvgPicture.asset(AppIcons.iconsDentistIcon),
           SizedBox(width: MediaQuery.sizeOf(context).width * .03),
-          Text(AppStrings.dentist),
+          const Text(AppStrings.dentist),
         ],
       ),
     );

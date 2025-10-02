@@ -16,7 +16,7 @@ class PrivacePolicyView extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios_new, size: 18),
+          icon: const Icon(Icons.arrow_back_ios_new, size: 18),
         ),
         title: Text(
           'Privacy Policy',
@@ -48,30 +48,30 @@ class PrivacePolicyView extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Welcome to Cure. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our doctor appointment booking app.',
                 style: AppStyles.font16Meduim(
                   context,
                 ).copyWith(color: AppColors.darkGreyColor),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Text(
                 'terms & conditions',
                 style: AppStyles.font24Regular(
                   context,
                 ).copyWith(color: AppColors.secondaryTextColor),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
-                """By registering, accessing, or using this app, you confirm that you are at least 18 years old (or have parental/guardian consent if younger) and agree to be bound by these Terms and our Privacy Policy.""",
+                '''By registering, accessing, or using this app, you confirm that you are at least 18 years old (or have parental/guardian consent if younger) and agree to be bound by these Terms and our Privacy Policy.''',
                 style: AppStyles.font16Meduim(
                   context,
                 ).copyWith(color: AppColors.darkGreyColor),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
-                """You agree to:
+                '''You agree to:
             • Use the app only for lawful purposes.
             • Provide accurate and complete information
               during registration and booking.
@@ -82,7 +82,7 @@ class PrivacePolicyView extends StatelessWidget {
             •  Try to access data or systems not meant for 
               you.
             •  Use the app to harass or abuse doctors or staff. 
-Your data is handled in accordance with our [Privacy Policy]. You are responsible for keeping your login credentials secure.""",
+Your data is handled in accordance with our [Privacy Policy]. You are responsible for keeping your login credentials secure.''',
                 style: AppStyles.font16Meduim(
                   context,
                 ).copyWith(color: AppColors.darkGreyColor),

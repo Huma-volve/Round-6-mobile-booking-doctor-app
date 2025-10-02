@@ -5,9 +5,9 @@ class NotificationModel {
   String description;
   String date;
   NotificationModel({
-    this.imageUrl,
     required this.title,
     required this.description,
     required this.date,
+    this.imageUrl,
   });
 }
