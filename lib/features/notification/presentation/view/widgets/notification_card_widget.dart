@@ -24,9 +24,9 @@ class NotificationCardWidget extends StatelessWidget {
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text(notificationModel.title), const Text('4h')],
+          children: [Text(notificationModel.title ?? ''), const Text('4h')],
         ),
-        subtitle: Text(notificationModel.description, maxLines: 1),
+        subtitle: Text(notificationModel.description ?? '', maxLines: 1),
       ),
     );
   }

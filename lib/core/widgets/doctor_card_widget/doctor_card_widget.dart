@@ -1,5 +1,6 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_icons.dart';
+import 'package:booking_doctor/core/constants/app_images.dart';
 import 'package:booking_doctor/features/home/domain/entities/doctor_model.dart';
 import 'package:booking_doctor/core/widgets/doctor_card_widget/doctor_image_widget.dart';
 import 'package:booking_doctor/core/widgets/doctor_card_widget/name_location_rates_dates_column.dart';
@@ -7,8 +8,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DoctorCardWidget extends StatelessWidget {
-  const DoctorCardWidget({required this.doctorModel, super.key});
-  final DoctorModel doctorModel;
+  DoctorCardWidget({
+    required this.doctorModel,
+    super.key,
+    this.isFaverote = false,
+    this.onTap,
+  });
+  final DoctorEntity doctorModel;
+  bool isFaverote;
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -22,7 +30,9 @@ class DoctorCardWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          DoctorImageWidget(ImageUrl: doctorModel.imageUrl),
+          DoctorImageWidget(
+            ImageUrl: doctorModel.imageUrl ?? AppImages.fakeImage,
+          ),
           SizedBox(width: size.width * .02),
           NameLocationRatesDatesColumn(
             size: size,
@@ -32,7 +42,12 @@ class DoctorCardWidget extends StatelessWidget {
             date: doctorModel.date,
           ),
           const Spacer(),
-          SvgPicture.asset(AppIcons.iconsFilledHeartIcon),
+          GestureDetector(
+            onTap: onTap,
+            child: isFaverote
+                ? SvgPicture.asset(AppIcons.iconsFilledHeartIcon)
+                : SvgPicture.asset(AppIcons.iconsEmptyHeartIcon),
+          ),
         ],
       ),
     );

@@ -1,12 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
-class FavouriteHospitalModel {
+class FavouriteHospital {
   String? imageUrl;
   String title;
   String location;
   String rateNum;
   String date;
-  FavouriteHospitalModel({
+
+  FavouriteHospital({
     required this.title,
     required this.location,
     required this.rateNum,

@@ -15,21 +15,53 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  Map<String, dynamic>? userData;
   bool isNotification = true;
+  @override
+  void initState() {
+    super.initState();
+    // _loadUserData();
+  }
+
+  // Future<void> _loadUserData() async {
+  //   final userJson = await sl<CacheHelper>().getData('user');
+  //   setState(() {
+  //     userData = jsonDecode(userJson!);
+  //   });
+  // }
+
+  // Future<void> _logout() async {
+  //   try {
+  //     await sl<UserRepository>().logout();
+  //     if (mounted) {
+  //       Navigator.pushNamedAndRemoveUntil(
+  //         context,
+  //         RoutesNames.login,
+  //         (route) => false,
+  //       );
+  //     }
+  //   } catch (e) {
+  //     if (mounted) {
+  //       ScaffoldMessenger.of(
+  //         context,
+  //       ).showSnackBar(const SnackBar(content: Text('Logout failed')));
+  //     }
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white),
+      appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  vertical: 16,
+                  vertical: 12,
                   horizontal: 8,
                 ),
                 margin: const EdgeInsets.symmetric(vertical: 16),
@@ -58,6 +90,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 context: context,
                               ),
                             ),
+                            const SizedBox(height: 4),
                             const SizedBox(height: 4),
 
                             Row(
@@ -157,10 +190,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-              CustomListTile(
-                leading: SvgPicture.asset(AppIcons.logoutIcon),
-                title: 'Log Out',
-                titleColor: Colors.red,
+              InkWell(
+                onTap: () {
+                  _showLogoutDialog(context);
+                },
+                child: CustomListTile(
+                  leading: SvgPicture.asset(AppIcons.logoutIcon),
+                  title: 'Log Out',
+                  titleColor: Colors.red,
+                ),
               ),
             ],
           ),
@@ -168,4 +206,141 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+}
+
+void CustomShowDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'LogOut',
+              style: AppStyles.georgia400Regular(context: context, font: 24.0),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Are you sure you want to log out?',
+              style: AppStyles.fontMontserratRegularGreyColor(
+                context,
+                size: 16,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                'cancel',
+                style: AppStyles.fontMontserratRegularGreyColor(
+                  context,
+                  size: 14,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: TextButton(
+              onPressed: () {
+                // setState(() {
+                // _logout();
+                // });
+              },
+              child: Text(
+                'Yes,logout',
+                style: AppStyles.montserrat400Regular(
+                  context: (context),
+                  font: 14.0,
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void _showLogoutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    barrierDismissible: false, // مايتقفلش بالضغط برة
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Column(
+          children: [
+            Text(
+              'LogOut',
+              style: AppStyles.georgia400Regular(context: context, font: 24.0),
+            ),
+
+            const SizedBox(height: 8),
+            const Divider(thickness: 1),
+          ],
+        ),
+        content: Text(
+          'Are you sure you want to log out?',
+          textAlign: TextAlign.center,
+          style: AppStyles.fontMontserratRegularGreyColor(context, size: 16),
+        ),
+        actionsAlignment: MainAxisAlignment.spaceBetween,
+        actions: [
+          // Cancel Button
+          SizedBox(
+            width: 120,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey[300],
+                foregroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () {
+                Navigator.pop(context); // يقفل البوب أب
+              },
+              child: Text(
+                'Cancel',
+                style: AppStyles.fontMontserratRegularGreyColor(
+                  context,
+                  size: 14,
+                ),
+              ),
+            ),
+          ),
+
+          // Yes, Logout Button
+          SizedBox(
+            width: 120,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/login');
+              },
+              child: Text(
+                'Yes,Logout',
+                style: AppStyles.montserrat400Regular(
+                  context: (context),
+                  font: 14.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  );
 }

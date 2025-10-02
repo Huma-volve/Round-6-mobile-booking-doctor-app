@@ -1,10 +1,10 @@
-class FavourteDoctorModel {
+class FavouriteModelGen {
   String? imageUrl;
   String title;
   String location;
   String rateNum;
   String date;
-  FavourteDoctorModel({
+  FavouriteModelGen({
     required this.title,
     required this.location,
     required this.rateNum,

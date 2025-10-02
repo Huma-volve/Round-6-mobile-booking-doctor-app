@@ -1,10 +1,14 @@
 import 'package:booking_doctor/core/constants/app_colors.dart';
 import 'package:booking_doctor/core/constants/app_styles.dart';
+import 'package:booking_doctor/features/favourite/presentation/cubit/favourite_cubit.dart';
 import 'package:booking_doctor/features/favourite/presentation/views/widgets/favourite_list_widget.dart';
+import 'package:booking_doctor/features/home/domain/entities/doctor_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FavouriteFilledBody extends StatelessWidget {
-  const FavouriteFilledBody({super.key});
+  FavouriteFilledBody({super.key, required this.doctorsNearYou});
+  List<DoctorEntity> doctorsNearYou = [];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,10 @@ class FavouriteFilledBody extends StatelessWidget {
             const SizedBox(height: 16),
             const Expanded(
               child: TabBarView(
-                children: [FavouriteListWidget(), FavouriteListWidget()],
+                children: [
+                  FavouriteListWidget(doctorsNearYou: doctorsNearYou),
+                  FavouriteListWidget(doctorsNearYou: doctorsNearYou),
+                ],
               ),
             ),
           ],
