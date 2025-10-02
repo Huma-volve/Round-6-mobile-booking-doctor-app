@@ -7,10 +7,6 @@ import 'package:booking_doctor/features/home/presentation/views/widgets/custom_a
 import 'package:booking_doctor/features/home/presentation/views/widgets/dashed_button.dart';
 import 'package:booking_doctor/features/home/presentation/views/widgets/location_row.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-
-=======
->>>>>>> 88e1a3766a44216213bf4318aaf8f16ca2ee513d
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -23,15 +19,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         height: kToolbarHeight,
         child: Row(
           children: [
-            CircleAvatar(backgroundImage: AssetImage(AppImages.homeImage)),
+            const CircleAvatar(
+              backgroundImage: AssetImage(AppImages.homeImage),
+            ),
             SizedBox(width: SizeConfig.blockSizeHorizontal * 2),
             InkWell(
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: Column(
-                      children: [Text("Your location"), Divider(height: 1)],
+                    title: const Column(
+                      children: [Text('Your location'), Divider(height: 1)],
                     ),
 
                     content: Column(
@@ -42,8 +40,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
                           fontSize: 14,
                         ),
-                        SizedBox(height: 16),
-                        DashedButton(),
+                        const SizedBox(height: 16),
+                        const DashedButton(),
                       ],
                     ),
                   ),
@@ -61,12 +59,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     ).copyWith(color: AppColors.secondaryColor),
                   ),
                   SizedBox(height: SizeConfig.safeBlockHorizontal * 2),
-                  LocationRow(),
+                  const LocationRow(),
                 ],
               ),
             ),
-            Spacer(),
-            CustomAppbarRightBottons(),
+            const Spacer(),
+            const CustomAppbarRightBottons(),
           ],
         ),
       ),
@@ -74,5 +72,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(120);
+  Size get preferredSize => const Size.fromHeight(120);
 }
